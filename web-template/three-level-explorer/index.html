@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>三层数据浏览器 · 模板</title>
+    <style>
+      :root{
+        --bg:#f6f3ee; --panel:#fffdf9; --ink:#221d16; --ink-2:#5c554a; --ink-3:#7d7462;
+        --line:#e0d7c3; --chip:#efe9dc; --accent:#b4472a; --accent-ink:#fff;
+        --bar-track:#ece5d5; --shadow:0 1px 3px rgba(60,45,20,.08),0 8px 28px rgba(60,45,20,.07);
+        --focus-ring:#b4472a; --leaf-bg:#eef4e4; --leaf-line:#9db87a; --leaf-ink:#3d5c1e;
+        --hl-bg:#fdf6e3; --hl-line:#d9b96a;
+      }
+      @media (prefers-color-scheme: dark){
+        :root{
+          --bg:#171410; --panel:#211c16; --ink:#f0e9dc; --ink-2:#c4bba8; --ink-3:#a2987f;
+          --line:#3a332a; --chip:#2b251d; --bar-track:#332c22;
+          --shadow:0 1px 3px rgba(0,0,0,.4),0 8px 28px rgba(0,0,0,.35);
+          --leaf-bg:#26331a; --leaf-line:#5f7d3a; --leaf-ink:#c6e29a;
+          --hl-bg:#2e2716; --hl-line:#6b551f;
+        }
+      }
+      *{box-sizing:border-box}
+      html,body{margin:0;padding:0}
+      body{
+        background:var(--bg); color:var(--ink);
+        font-family:"PingFang TC","PingFang SC","Hiragino Sans GB","Microsoft JhengHei","Noto Sans TC","Noto Sans SC",system-ui,sans-serif;
+        -webkit-font-smoothing:antialiased; line-height:1.55;
+        padding-bottom:92px;
+      }
+      .wrap{max-width:1240px;margin:0 auto;padding:20px 16px 40px}
+      h1{font-size:clamp(24px,4.5vw,34px);line-height:1.2;margin:0 0 6px;font-weight:800}
+      .sub{color:var(--ink-2);font-size:15px;margin:0;max-width:48em}
+      .sub b{color:var(--ink)}
+      .stats{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+      .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 12px;box-shadow:var(--shadow)}
+      .stat .n{font-size:19px;font-weight:800;line-height:1.15}
+      .stat .l{font-size:13px;color:var(--ink-3)}
+      /* highlight banner */
+      .highlight{margin:16px 0 4px;background:var(--hl-bg);border:2px solid var(--hl-line);border-radius:16px;padding:16px 18px 12px}
+      .highlight h2{margin:0;font-size:21px;line-height:1.3}
+      .highlight .mtotal{font-size:15.5px;color:var(--ink-2);margin:4px 0 0}
+      .highlight .mtotal b{color:var(--ink);font-size:19px}
+      .highlight .mnote{font-size:13px;color:var(--ink-3);margin:6px 0 0}
+      .highlight-items{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+      .highlight-items button{min-height:48px;border:1px solid var(--hl-line);background:var(--panel);color:var(--ink);
+        font:inherit;font-size:14.5px;font-weight:600;padding:8px 14px;border-radius:12px;cursor:pointer;text-align:left}
+      .highlight-items button b{font-size:16px}
+      .highlight-items button span{color:var(--ink-3);font-size:13px;font-weight:600}
+      /* toolbar */
+      .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:16px 0 8px}
+      .seg{display:inline-flex;background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:3px}
+      .seg button{border:0;background:transparent;color:var(--ink-2);font:inherit;font-size:15px;font-weight:700;
+        padding:10px 18px;min-height:44px;border-radius:999px;cursor:pointer}
+      .seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);box-shadow:var(--shadow)}
+      .searchbox{position:relative;flex:1 1 240px;max-width:460px}
+      .searchbox input{width:100%;font:inherit;font-size:15px;padding:12px 14px;min-height:48px;border-radius:999px;
+        border:1px solid var(--line);background:var(--panel);color:var(--ink)}
+      .searchbox input:focus{outline:2px solid var(--focus-ring);outline-offset:1px}
+      .results{position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--panel);border:1px solid var(--line);
+        border-radius:12px;box-shadow:var(--shadow);z-index:30;max-height:320px;overflow:auto;display:none}
+      .results.open{display:block}
+      .results button{display:block;width:100%;text-align:left;border:0;background:transparent;color:var(--ink);
+        font:inherit;font-size:14.5px;padding:12px 13px;min-height:48px;cursor:pointer;border-bottom:1px solid var(--line)}
+      .results button:last-child{border-bottom:0}
+      .results button:hover{background:var(--chip)}
+      .results .path{color:var(--ink-3);font-size:13px}
+      .chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:2px 0 14px}
+      .chips .clabel{font-size:14px;color:var(--ink-2);font-weight:600}
+      .chips button{min-height:44px;border:1px solid var(--line);background:var(--panel);color:var(--ink);
+        font:inherit;font-size:14.5px;font-weight:700;padding:8px 16px;border-radius:999px;cursor:pointer}
+      .chips button:hover{border-color:var(--accent);color:var(--accent)}
+      /* shared buttons */
+      .btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:14.5px;font-weight:700;
+        padding:10px 16px;min-height:48px;border-radius:12px;cursor:pointer}
+      .btn:hover{border-color:var(--ink-3)}
+      .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+      .btn.small{min-height:44px;padding:8px 13px;font-size:14px;border-radius:10px}
+      .btn[disabled]{opacity:.55;cursor:default}
+      .bar{height:10px;border-radius:99px;background:var(--bar-track);overflow:hidden}
+      .bar i{display:block;height:100%;border-radius:99px}
+      .dot{display:inline-block;width:12px;height:12px;border-radius:4px;flex:none}
+      /* L1 list */
+      .l1card{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);
+        padding:16px 18px;margin-bottom:12px}
+      .l1head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+      .l1head .nm{font-size:20px;font-weight:800}
+      .l1head .vl{margin-left:auto;font-size:19px;font-weight:800;white-space:nowrap}
+      .l1head .pc{color:var(--ink-3);font-weight:700;font-size:14px;white-space:nowrap}
+      .l1card .bar{margin-top:10px}
+      .intro{font-size:14.5px;color:var(--ink-2);margin:10px 0 0}
+      .rowbtns{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+      .l2box{margin-top:8px;border-top:1px solid var(--line)}
+      .l2row{padding:12px 2px;border-bottom:1px dashed var(--line)}
+      .l2row:last-child{border-bottom:0}
+      .l2head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+      .l2head .nm{font-size:16.5px;font-weight:700}
+      .l2head .vl{margin-left:auto;font-weight:800;font-size:15.5px;white-space:nowrap}
+      .l2head .pc{color:var(--ink-3);font-weight:600;font-size:13px;white-space:nowrap}
+      .l2row .bar{height:7px;margin-top:7px}
+      .l2row .rate{font-size:13.5px;color:var(--ink-2);margin-top:5px}
+      .l2btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
+      .l3box{margin:10px 0 2px 10px;padding:4px 0 4px 14px;border-left:3px solid var(--leaf-line)}
+      .l3row{padding:9px 2px;border-bottom:1px dashed var(--line)}
+      .l3row:last-child{border-bottom:0}
+      .l3head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+      .l3head .nm{font-size:16px;font-weight:700}
+      .l3head .vl{margin-left:auto;font-weight:800;font-size:15px;white-space:nowrap}
+      .leafbadge{display:inline-block;font-size:13px;font-weight:700;padding:2px 9px;border-radius:999px;
+        background:var(--leaf-bg);color:var(--leaf-ink);border:1px solid var(--leaf-line)}
+      .mini-quote{font-size:13.5px;color:var(--ink-2);font-style:italic;margin-top:4px}
+      .restrow{color:var(--ink-3);font-size:14px;padding:10px 2px}
+      /* concrete view */
+      .conc-head h2{font-size:23px;margin:0 0 4px}
+      .conc-head p{color:var(--ink-2);font-size:14.5px;margin:0;max-width:48em}
+      .branch-jumps{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+      .branch-jumps button{min-height:44px;border:1px solid var(--line);background:var(--panel);color:var(--ink);
+        font:inherit;font-size:14px;font-weight:700;padding:8px 13px;border-radius:999px;cursor:pointer}
+      .cgroup{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);
+        padding:16px 18px 10px;margin-bottom:14px}
+      .cgroup .gpath{font-size:13.5px;color:var(--ink-3);font-weight:600}
+      .cgroup h3{font-size:19px;margin:2px 0 2px}
+      .cgroup .gsub{font-size:14px;color:var(--ink-2)}
+      .crow{padding:11px 2px;border-top:1px dashed var(--line)}
+      .crow .bar{height:7px;margin-top:7px}
+      .quote{margin:8px 0 4px;padding:11px 13px;background:var(--chip);border-radius:12px;font-size:14px}
+      .quote .q-t{font-style:italic}
+      .quote .q-l{color:var(--ink-3);font-size:13px;margin-top:4px;font-style:normal}
+      /* chart view */
+      .crumbs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:4px 0 12px;font-size:15px}
+      .crumbs .clab{font-weight:800;margin-right:2px}
+      .crumbs button{border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:14.5px;
+        font-weight:700;padding:8px 13px;min-height:44px;border-radius:999px;cursor:pointer}
+      .crumbs button.cur{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+      .crumbs .sep{color:var(--ink-3)}
+      .layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,1fr);gap:16px;align-items:start}
+      @media (max-width:900px){.layout{grid-template-columns:1fr}}
+      .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+      .chart-card{padding:10px}
+      .chart-holder{position:relative}
+      svg#sun{width:100%;height:auto;display:block}
+      svg#sun path.arc{stroke:var(--panel);stroke-width:1.4;cursor:pointer;transition:opacity .15s}
+      svg#sun path.arc:hover{opacity:.82}
+      svg#sun path.arc.selected{stroke:var(--ink);stroke-width:3.5px}
+      svg#sun text{pointer-events:none;font-weight:700}
+      .center-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+      .center-inner{width:28%;max-width:200px;text-align:center;pointer-events:auto}
+      .center-inner .cname{font-weight:800;font-size:clamp(15px,2.4vw,19px);line-height:1.25}
+      .center-inner .cval{color:var(--ink-2);font-size:13px;margin-top:2px}
+      .center-inner button{margin-top:7px;border:1px solid var(--line);background:var(--chip);color:var(--ink);
+        font:inherit;font-size:13.5px;font-weight:700;padding:8px 13px;min-height:44px;border-radius:999px;cursor:pointer}
+      .hint{font-size:13.5px;color:var(--ink-3);text-align:center;margin:8px 4px 4px}
+      .panel{padding:18px 18px 14px;position:sticky;top:12px}
+      @media (max-width:900px){.panel{position:static}}
+      .panel .kicker{font-size:13px;color:var(--ink-3)}
+      .panel h2{font-size:23px;margin:2px 0 4px;line-height:1.25}
+      .panel .big{font-size:15px;color:var(--ink-2)}
+      .panel .big b{color:var(--ink);font-size:17px}
+      .panel .intro{margin-top:8px}
+      .badge{display:inline-block;font-size:13px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--chip);
+        color:var(--ink-2);border:1px solid var(--line);margin:6px 6px 0 0}
+      .badge.warn{color:#8a5a12;border-color:#d9b96a;background:#fdf3d7}
+      @media (prefers-color-scheme: dark){.badge.warn{color:#e8c876;background:#3a2f16;border-color:#6b551f}}
+      .leafbanner{background:var(--leaf-bg);border:2px solid var(--leaf-line);border-radius:14px;padding:13px 15px;margin:12px 0 4px}
+      .leafbanner .lt{font-size:17px;font-weight:800;color:var(--leaf-ink)}
+      .leafbanner .ld{font-size:15px;margin-top:3px}
+      .leafbanner .ld b{font-size:16.5px}
+      .childlist{margin:14px 0 0;padding:0;list-style:none}
+      .childlist li{border-top:1px solid var(--line)}
+      .childlist button.row{width:100%;display:block;text-align:left;border:0;background:transparent;color:var(--ink);
+        font:inherit;padding:12px 2px;min-height:48px;cursor:pointer}
+      .childlist .r1{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+      .childlist .nm{font-weight:700;font-size:16px}
+      .childlist .vl{font-weight:800;font-size:15.5px;white-space:nowrap}
+      .childlist .pc{color:var(--ink-3);font-weight:600;font-size:13px;margin-left:6px}
+      .childlist .bar{height:7px;margin-top:6px}
+      .childlist .note{font-size:13px;color:var(--ink-3);margin-top:3px}
+      .panel .foot-note{font-size:13px;color:var(--ink-3);margin-top:12px}
+      .backchart{display:none;margin-top:12px}
+      @media (max-width:900px){.backchart{display:inline-block}}
+      /* year view */
+      .year-head h2{font-size:23px;margin:0 0 4px}
+      .year-head p{color:var(--ink-2);font-size:14.5px;margin:0;max-width:52em}
+      .year-head p b{color:var(--ink)}
+      .ylayer{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0 4px}
+      .ylayer .clabel{font-size:14px;color:var(--ink-2);font-weight:600}
+      .ybtns{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
+      .ybtns button{min-height:52px;border:1px solid var(--line);background:var(--panel);color:var(--ink);
+        font:inherit;font-size:16px;font-weight:800;padding:8px 14px;border-radius:12px;cursor:pointer;line-height:1.25}
+      .ybtns button span{display:block;font-size:12px;color:var(--ink-3);font-weight:600}
+      .ybtns button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+      .ybtns button[aria-pressed="true"] span{color:var(--accent-ink);opacity:.85}
+      .ycard{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);
+        padding:16px 18px 10px;margin-top:12px}
+      .ycard h3{font-size:20px;margin:0 0 2px}
+      .ycard .ysub{font-size:14px;color:var(--ink-2)}
+      .thinbadge{display:inline-block;font-size:13px;font-weight:700;padding:2px 9px;border-radius:999px;
+        color:#8a5a12;border:1px solid #d9b96a;background:#fdf3d7;margin-left:6px;vertical-align:2px}
+      @media (prefers-color-scheme: dark){.thinbadge{color:#e8c876;background:#3a2f16;border-color:#6b551f}}
+      .yhighlight{margin-top:12px;background:var(--hl-bg);border:1px solid var(--hl-line);border-radius:12px;padding:11px 13px}
+      .yhighlight .ymt{font-size:15px;font-weight:800}
+      .yhighlight .ymrow{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:5px;font-size:14.5px;color:var(--ink-2)}
+      .yhighlight .ymrow b{color:var(--ink);font-size:16px}
+      .yhighlight .ymnote{font-size:13px;color:var(--ink-3);margin-top:5px}
+      .yrow{padding:10px 2px;border-bottom:1px dashed var(--line)}
+      .yrow:last-child{border-bottom:0}
+      .yrow .bar{height:8px;margin-top:6px}
+      .yrow .avg{font-size:13px;color:var(--ink-3);margin-top:4px}
+      .trend-wrap{margin-top:16px}
+      .trend-wrap h3{font-size:19px;margin:0 0 2px}
+      .trend-wrap .tsub{font-size:14px;color:var(--ink-2);margin:0}
+      .tchips{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 4px}
+      .tchips button{min-height:44px;border:1px solid var(--line);background:var(--panel);color:var(--ink);
+        font:inherit;font-size:14px;font-weight:700;padding:7px 12px;border-radius:999px;cursor:pointer}
+      .tchips button[aria-pressed="true"]{border-color:var(--tc,#888);color:var(--tc,#888);box-shadow:inset 0 0 0 1px var(--tc,#888)}
+      .tchips button .dot{margin-right:2px;vertical-align:-1px}
+      svg#trend{width:100%;height:auto;display:block;margin-top:6px}
+      svg#trend .grid{stroke:var(--line);stroke-width:1}
+      svg#trend .axlab{fill:var(--ink-3);font-size:12.5px;font-weight:600}
+      svg#trend .vlab{font-size:13px;font-weight:800}
+      .ynote{font-size:13.5px;color:var(--ink-3);margin-top:10px;max-width:56em}
+      /* bottom CTA */
+      .jumpbar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--panel);
+        border-top:2px solid var(--line);box-shadow:0 -4px 18px rgba(60,45,20,.12);
+        padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+      .jumpbar-in{max-width:1240px;margin:0 auto;display:flex;gap:10px;align-items:center}
+      .jumpbar .jt{font-size:14.5px;font-weight:700;line-height:1.35}
+      .jumpbar .jt span{display:block;font-size:13px;color:var(--ink-3);font-weight:600}
+      .jumpbar button{margin-left:auto;flex:none;background:var(--accent);border:1px solid var(--accent);color:var(--accent-ink);
+        font:inherit;font-size:15.5px;font-weight:800;padding:12px 18px;min-height:52px;border-radius:14px;cursor:pointer}
+      footer{margin-top:22px;color:var(--ink-3);font-size:13.5px;max-width:62em}
+      footer p{margin:0 0 6px}
+      .flash{animation:flashbg 1.5s ease 0s 2}
+      @keyframes flashbg{0%,100%{box-shadow:var(--shadow)}50%{box-shadow:0 0 0 3px var(--accent),0 8px 28px rgba(60,45,20,.15)}}
+      @media (prefers-reduced-motion: reduce){.flash{animation:none;outline:3px solid var(--accent)}}
+      @media (max-width:640px){
+        body{padding-bottom:78px}
+        .jumpbar{padding:8px 12px calc(8px + env(safe-area-inset-bottom))}
+        .jumpbar .jt{font-size:14px}
+        .jumpbar .jt span{display:none}
+        .jumpbar button{min-height:48px;padding:10px 14px;font-size:15px}
+        .highlight{padding:14px 14px 10px}
+        .highlight-items{gap:6px;margin-top:10px}
+        .highlight-items button{min-height:44px;padding:7px 11px;font-size:14px}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <h1>三层数据浏览器 · 模板</h1>
+        <p class="sub">示例数据：某鲜果店顾客评价 <b id="subDoc">11,842 篇</b>，按内容分 <b id="subCats">6 大类</b>，再细拆到 <b id="subItems">10 个具体项</b>。下面已经由大到细排好：<b>撳掣就去到嗰层，唔使估要撳边度。</b></p>
+        <div class="stats" id="stats"></div>
+      </header>
+
+      <section class="highlight" aria-label="重点组合">
+        <h2 id="hlTitle">⭐ 热销两大类：苹果类 ＋ 柑橘类</h2>
+        <p class="mtotal" id="hlTotal"></p>
+        <div class="highlight-items" id="hlItems"></div>
+        <p class="mnote" id="hlNote"></p>
+      </section>
+
+      <div class="toolbar">
+        <div class="seg" role="group" aria-label="显示模式">
+          <button id="viewListBtn" aria-pressed="true">列表</button>
+          <button id="viewConcBtn" aria-pressed="false">具体原因</button>
+          <button id="viewYearBtn" aria-pressed="false">按年份</button>
+          <button id="viewChartBtn" aria-pressed="false">圈图</button>
+        </div>
+        <div class="searchbox">
+          <input id="search" type="search" placeholder="搜寻：太酸、籽太多、礼盒装…" autocomplete="off" />
+          <div class="results" id="results"></div>
+        </div>
+      </div>
+      <div class="chips" aria-label="热门搜寻">
+        <span class="clabel">唔知揾咩？试下撳：</span>
+        <button data-chip="太酸">太酸</button>
+        <button data-chip="籽太多">籽太多</button>
+        <button data-chip="压坏／磕碰">压坏</button>
+        <button data-chip="礼盒装">礼盒装</button>
+      </div>
+
+      <main id="listView" aria-label="大分类列表"></main>
+
+      <section id="concView" style="display:none" aria-label="全部具体原因">
+        <div class="conc-head">
+          <h2>全部具体原因（第三层 · 最入面嗰层）</h2>
+          <p id="concDesc">3 支细项再拆落去，共 10 个具体项，逐支排好。每项数字 = <b>每一百篇嗰支嘅记录入面有几多篇</b>；有原句嗰啲附埋原话。</p>
+        </div>
+        <div class="branch-jumps" id="branchJumps"></div>
+        <div id="concGroups"></div>
+      </section>
+
+      <section id="yearView" style="display:none" aria-label="按年份">
+        <div class="year-head">
+          <h2>按年份睇：边年多人提到边样？</h2>
+          <p>逐年用同一套分类重计。数字 = <b>嗰年每一百篇已分类记录入面，有几多篇提到呢个分类</b>（一篇可入多类）。每个年份掣下面写明嗰年有几多篇已分类记录——<b>边年样本薄，边年个比例就越易大上大落</b>，唔好当真数咁咬实。</p>
+        </div>
+        <div class="ylayer">
+          <span class="clabel">睇边层：</span>
+          <div class="seg" role="group" aria-label="评价定追评">
+            <button id="ylPosts" aria-pressed="true">评价</button>
+            <button id="ylComments" aria-pressed="false">追评</button>
+          </div>
+        </div>
+        <div class="ybtns" id="yearBtns" role="group" aria-label="拣年份"></div>
+        <div class="ycard" id="yearCard"></div>
+        <div class="trend-wrap">
+          <h3>走势：拣一个成因，睇佢逐年升跌</h3>
+          <p class="tsub">纵轴 = 每 100 篇已分类记录有几多篇（由 0 起）。横轴按真年份距离排，冇数据嗰年会断线，唔会驳埋扮连续。</p>
+          <div class="tchips" id="trendChips"></div>
+          <div class="card chart-card"><svg id="trend" viewBox="0 0 720 330" role="img" aria-label="逐年走势图"></svg></div>
+          <p class="ynote" id="yearNote"></p>
+        </div>
+      </section>
+
+      <div id="chartWrap" style="display:none">
+        <nav class="crumbs" id="crumbs" aria-label="你而家喺边"></nav>
+        <div class="layout" id="chartLayout">
+          <div class="card chart-card">
+            <div class="chart-holder">
+              <svg id="sun" viewBox="0 0 760 760" role="img" aria-label="三层同心圈图"></svg>
+              <div class="center-label"><div class="center-inner" id="centerInner"></div></div>
+            </div>
+            <p class="hint" id="chartHint">全图只画最外圈大分类。撳任何一格入嗰支，先会画埋佢嘅细项同具体项；未细分嘅部分唔画灰格，篇数喺右边清单列明。</p>
+          </div>
+          <aside class="card panel" id="panel" aria-live="polite"></aside>
+        </div>
+      </div>
+
+      <footer>
+        <p><b>点读数：</b>第一层数字系该大类嘅记录数（一篇可以同时入几个大类，所以占比按 <span id="footHits">12,020</span> 次分类命中计，唔好当百分比加总）。第二层数字系「每一百篇该大类记录入面有几篇提到呢个细项」；第三层系「每一百篇嗰一支记录入面有几篇」。清单入面「其他／未细分」嗰行系冇明文提到更细项嘅部分，唔系漏计。</p>
+        <p>组名有 <b>＊</b> 嗰啲系用较松口径计嘅，数字当<b>上限</b>睇；冇 ＊ 嗰啲系明文计。第三层暂时齐 <span id="footBranches">3</span> 支，其余各支去到第二层为止。（呢页系模板示例，数字同原句都系虚构示例；换自己数据时，记得连呢段口径说明一齐改。）</p>
+      </footer>
+    </div>
+
+    <div class="jumpbar">
+      <div class="jumpbar-in">
+        <div class="jt">唔想逐层撳？<span id="jumpSub">3 支 · 10 个最具体项一次过排喺度</span></div>
+        <button id="jumpBtn">直接跳到最入面 ↓</button>
+      </div>
+    </div>
+
+    <script>
+    "use strict";
+    /* ================================================================
+   ===== DATA: replace this block =====
+   换数据就系改呢一橛 + 下面嘅 YEAR DATA 橛 + YCATS。
+   字段格式见仓库入面呢个文件夹嘅 README。
+   以下系虚构示例数据：某鲜果店嘅顾客评价分类。
+   ================================================================ */
+    /* META：docTotal = 已分类记录总数（篇）；docLabel = 嗰个总数嘅叫法；thinN = 年份样本低于呢个篇数就标「样本较薄」 */
+    var META = { docTotal:11842, docLabel:"已分类评价", thinN:1000 };
+    /* DATA 树：L1 用 count（篇数）；L2 rate = 每 100 篇该大类有几多篇，pool = 嗰支记录实数（有第三层先要）；
+       L3 rate = 每 100 篇嗰支（pool）有几多篇；star:true = 较松口径，名后加 ＊ 并提示当上限睇；color = 大类色（十六进制） */
+    var DATA = { name:"全部", children:[
+      {name:"苹果类", count:3280, color:"#c0392b", children:[
+        {name:"富士苹果", rate:36.2, pool:1187, children:[
+          {name:"太酸", rate:18.4},{name:"个头太小", rate:9.6},
+          {name:"不够脆", rate:7.8},{name:"有碰伤", rate:4.1}]},
+        {name:"青苹果", rate:14.8},{name:"苹果汁／加工", rate:6.3}]},
+      {name:"柑橘类", count:2875, color:"#e67e22", children:[
+        {name:"砂糖橘", rate:41.5, pool:1193, children:[
+          {name:"酸过头", rate:15.9},{name:"籽太多", rate:12.7},{name:"皮难剥", rate:5.2}]},
+        {name:"橙子", rate:22.4},{name:"柚子", rate:11.9},{name:"柠檬", rate:4.6}]},
+      {name:"莓果类", count:2140, color:"#8e44ad", children:[
+        {name:"草莓", rate:38.9, pool:832, children:[
+          {name:"压坏／磕碰", rate:21.3},{name:"不甜", rate:11.5},{name:"个头参差", rate:6.4}]},
+        {name:"蓝莓", rate:19.2},{name:"车厘子", rate:16.7}]},
+      {name:"热带水果", count:1965, color:"#b7950b", children:[
+        {name:"芒果", rate:33.1},{name:"菠萝", rate:21.8},{name:"榴莲", rate:15.4}]},
+      {name:"瓜类", count:1120, color:"#27ae60", children:[
+        {name:"西瓜", rate:45.3},{name:"哈密瓜", rate:18.9},{name:"木瓜", rate:7.5}]},
+      {name:"礼赠类", count:640, star:true, color:"#7d7462", children:[
+        {name:"礼盒装", rate:52.6},{name:"果篮", rate:24.8},{name:"节日定制", rate:9.7}]}
+    ]};
+    /* QUOTES：第三层（或第二层）项名 -> 一句原话（节录），冇就唔使写 */
+    var QUOTES = {
+      "太酸":"酸到眯埋眼，食咗两个就摆低咗成盒",
+      "个头太小":"影出嚟好似好大个，实物得乒乓波咁大",
+      "籽太多":"啖啖都要吐籽，食到冇晒心机",
+      "压坏／磕碰":"成盒底嗰层压到出水，拣得返一半",
+      "不甜":"望落好红，食落淡茂茂冇味",
+      "礼盒装":"个盒几靓，不过入面得嗰几只果，送俾人有啲单薄"
+    };
+    /* INTRO：每个大类一句白话介绍（键 = 大类名） */
+    var INTRO = {
+      "苹果类":"呢类评价主要讲苹果：边个品种好食、甜唔甜脆唔脆、个头同卖相。",
+      "柑橘类":"呢类评价主要讲柑橘：砂糖橘、橙、柚同柠檬，讲酸甜、籽多唔多、皮好唔好剥。",
+      "莓果类":"呢类评价主要讲莓果：草莓、蓝莓、车厘子，最多人讲运输压坏同甜度。",
+      "热带水果":"呢类评价主要讲热带果：芒果、菠萝、榴莲，讲熟度、香味同出肉率。",
+      "瓜类":"呢类评价主要讲瓜：西瓜、哈密瓜、木瓜，讲甜唔甜、水份够唔够同新唔新鲜。",
+      "礼赠类":"呢类评价主要讲送礼：礼盒、果篮同节日定制，讲包装、卖相同送到嘅时间。"
+    };
+    /* HIGHLIGHT：页面顶部重点横幅——cats 嘅大类会计总数，items 系逐个节点掣（可以跨类），note 系横幅下面嘅说明 */
+    var HIGHLIGHT = {
+      title:"⭐ 热销两大类：苹果类 ＋ 柑橘类",
+      totalLabel:"热销两大类合计",
+      cats:["苹果类","柑橘类"],
+      items:["富士苹果","砂糖橘","太酸","籽太多","礼盒装"],
+      note:"下面头四项系嗰两大类入面嘅细项；「礼盒装」属「礼赠类」，系额外列出嘅相关项，冇计入上面个总数。同一篇评价可以入几项，唔好重复加总。"
+    };
+    /* HL：年份视图入面嘅「三口径」特别系列，同 YEAR_DATA 每年嘅 hl / hlC 按下标一一对应 */
+    var HL = {
+      cardTitle:"🏷 价格提及三口径（每 100 篇）",
+      series:["价格·严","价格·宽","价格·痕迹"],
+      colors:["#b4472a","#c07f16","#8a6d1f"],
+      note:"严 = 明文讲贵；宽 = 严 ＋ 有同其他店比过价；痕迹 = 任何价格相关字眼（最松，当上限睇）。"
+    };
+    /* 年份视图设定：YEAR_LAYERS = 两个数据层嘅显示名（键 posts / comments 固定）；INCOMPLETE_YEAR = 未完嗰年（会标「未完」）；YEAR_DEFAULT = 预设显示年份 */
+    var YEAR_LAYERS = { posts:"评价", comments:"追评" };
+    var INCOMPLETE_YEAR = "2025";
+    var YEAR_DEFAULT = "2024";
+    /* ===== END DATA ===== */
+
+    /* ============ 建树：计 value、parent、color、uid ============ */
+    function shade(hex, amt){
+      var n=parseInt(hex.slice(1),16), r=(n>>16)&255, g=(n>>8)&255, b=n&255;
+      function m(c){ return amt>=0 ? Math.round(c+(255-c)*amt) : Math.round(c*(1+amt)); }
+      return "rgb("+m(r)+","+m(g)+","+m(b)+")";
+    }
+    var totalHits=0, nL2=0, nL3=0, uidSeq=0;
+    DATA.children.forEach(function(l1){
+      totalHits+=l1.count; l1.value=l1.count; l1.parent=DATA; l1.depth=1; l1.base=l1.color; l1._uid="n"+(++uidSeq);
+      var sum2=0;
+      l1.children.forEach(function(l2,i){
+        nL2++; l2.parent=l1; l2.depth=2; l2.base=l1.color; l2._uid="n"+(++uidSeq);
+        l2.color=shade(l1.color, 0.16+ (i%4)*0.07);
+        l2.value=l1.count*l2.rate/100; sum2+=l2.value;
+        if(l2.children){
+          var sum3=0;
+          l2.children.forEach(function(l3,j){
+            nL3++; l3.parent=l2; l3.depth=3; l3.base=l1.color; l3._uid="n"+(++uidSeq);
+            l3.color=shade(l1.color, 0.38+(j%4)*0.08);
+            l3.value=(l2.pool||l2.value)*l3.rate/100; sum3+=l3.value;
+          });
+          if(sum3 < l2.value*0.985){
+            l2.children.push({name:"池内其他／未明文", rest:true, parent:l2, depth:3, base:l1.color,
+              color:"#b9b2a4", value:l2.value-sum3, _uid:"n"+(++uidSeq)});
+          }
+        }
+      });
+      if(sum2 < l1.count*0.985){
+        l1.children.push({name:"其他／未细分", rest:true, parent:l1, depth:2, base:l1.color,
+          color:"#c9c2b2", value:l1.count-sum2, _uid:"n"+(++uidSeq)});
+      }
+    });
+    DATA.value=totalHits; DATA.depth=0;
+    var branches=[]; /* 有第三层嘅 L2 支，顺序固定 */
+    DATA.children.forEach(function(l1){ l1.children.forEach(function(l2){ if(l2.children&&l2.children.length) branches.push(l2); }); });
+
+    function fmt(n){ return Math.round(n).toLocaleString("en-US"); }
+    function pct(part, whole){ return whole>0 ? (part/whole*100) : 0; }
+    function pctTxt(v){ return (v>=10? v.toFixed(0) : v.toFixed(1)) + "%"; }
+    function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
+    function pathOf(node){ var p=[]; var n=node; while(n && n!==DATA){ p.unshift(n); n=n.parent; } return p; }
+    function levelName(d){ return d===0?"全图": d===1?"第一层 · 大分类": d===2?"第二层 · 细项":"第三层 · 具体原因"; }
+    var allNodes=[];
+    (function walk(n){ if(n!==DATA) allNodes.push(n); (n.children||[]).forEach(walk); })(DATA);
+    function findNode(name){ var f=allNodes.filter(function(n){return n.name===name;}); return f.length?f[0]:null; }
+    function sortedKids(n){ return (n.children||[]).slice().sort(function(a,b){return b.value-a.value;}); }
+    function hasL3(l1){ return (l1.children||[]).some(function(l2){ return l2.children&&l2.children.length; }); }
+    function firstBranch(l1){ var b=(l1.children||[]).filter(function(l2){return l2.children&&l2.children.length;}); return b.length?b[0]:null; }
+
+    document.getElementById("stats").innerHTML =
+      stat(fmt(META.docTotal),META.docLabel+"（篇）")+stat(String(DATA.children.length),"第一层大分类")+
+      stat(String(nL2),"第二层细项")+stat(String(nL3),"第三层具体原因（"+branches.length+" 支）");
+    document.getElementById("subDoc").textContent = fmt(META.docTotal)+" 篇";
+    document.getElementById("subCats").textContent = DATA.children.length+" 大类";
+    document.getElementById("subItems").textContent = nL3+" 个具体项";
+    document.getElementById("footHits").textContent = fmt(totalHits);
+    document.getElementById("footBranches").textContent = branches.length;
+    document.getElementById("concDesc").innerHTML = branches.length+" 支细项再拆落去，共 "+nL3+" 个具体项，逐支排好。每项数字 = <b>每一百篇嗰支嘅记录入面有几多篇</b>；有原句嗰啲附埋原话。";
+    document.getElementById("jumpSub").textContent = branches.length+" 支 · "+nL3+" 个最具体项一次过排喺度";
+    function stat(n,l){ return '<div class="stat"><div class="n">'+n+'</div><div class="l">'+l+'</div></div>'; }
+
+    /* ============ 重点 banner（HIGHLIGHT 组合，数字全部由 DATA 计出） ============ */
+    (function buildHighlight(){
+      var cats=HIGHLIGHT.cats.map(function(nm){ return findNode(nm); }).filter(function(n){ return !!n; });
+      var total=0; cats.forEach(function(n){ total+=n.value; });
+      document.getElementById("hlTitle").textContent = HIGHLIGHT.title;
+      document.getElementById("hlTotal").innerHTML =
+        HIGHLIGHT.totalLabel+" 约 <b>"+fmt(total)+"</b> 篇 · 占全部命中 <b>"+pctTxt(pct(total,totalHits))+"</b>"+
+        "（"+cats.map(function(n){ return esc(n.name)+" "+fmt(n.value); }).join(" ＋ ")+"）";
+      document.getElementById("hlNote").textContent = HIGHLIGHT.note;
+      var items=HIGHLIGHT.items;
+      var box=document.getElementById("hlItems");
+      items.forEach(function(name){
+        var n=findNode(name); if(!n) return;
+        var b=document.createElement("button");
+        b.innerHTML=esc(name)+" <b>"+fmt(n.value)+"</b> <span>篇 ›</span>";
+        b.addEventListener("click", function(){ jumpToNode(n); });
+        box.appendChild(b);
+      });
+    })();
+
+    /* ============ 视图切换 ============ */
+    var listView=document.getElementById("listView"), concView=document.getElementById("concView"),
+        chartWrap=document.getElementById("chartWrap"), yearView=document.getElementById("yearView");
+    var vList=document.getElementById("viewListBtn"), vConc=document.getElementById("viewConcBtn"),
+        vChart=document.getElementById("viewChartBtn"), vYear=document.getElementById("viewYearBtn");
+    var curView="list";
+    function setView(v){
+      curView=v;
+      listView.style.display = v==="list" ? "block" : "none";
+      concView.style.display = v==="conc" ? "block" : "none";
+      chartWrap.style.display = v==="chart" ? "block" : "none";
+      yearView.style.display = v==="year" ? "block" : "none";
+      vList.setAttribute("aria-pressed", String(v==="list"));
+      vConc.setAttribute("aria-pressed", String(v==="conc"));
+      vChart.setAttribute("aria-pressed", String(v==="chart"));
+      vYear.setAttribute("aria-pressed", String(v==="year"));
+    }
+    vList.addEventListener("click", function(){ setView("list"); });
+    vConc.addEventListener("click", function(){ setView("conc"); concView.scrollIntoView({block:"start"}); });
+    vYear.addEventListener("click", function(){ setView("year"); yearView.scrollIntoView({block:"start"}); });
+    vChart.addEventListener("click", function(){ openChart(largestL1()); });
+    document.getElementById("jumpBtn").addEventListener("click", function(){
+      setView("conc"); concView.scrollIntoView({block:"start"});
+    });
+    function largestL1(){
+      return DATA.children.slice().sort(function(a,b){return b.value-a.value;})[0];
+    }
+    function openChart(node){
+      setView("chart");
+      setFocus(node||DATA);
+      chartWrap.scrollIntoView({block:"start"});
+    }
+    function flashEl(el){
+      if(!el) return;
+      el.scrollIntoView({block:"center", behavior:"smooth"});
+      el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
+    }
+
+    /* ============ 跳转：任何节点 → 对应清单位置 ============ */
+    function jumpToNode(n){
+      if(!n) return;
+      if(n.depth===3){
+        setView("conc");
+        flashEl(document.getElementById("crow-"+n._uid));
+      } else if(n.depth===2 && n.children && n.children.length){
+        setView("conc");
+        flashEl(document.getElementById("branch-"+n._uid));
+      } else if(n.depth===2){
+        setView("list");
+        expandL1(n.parent);
+        flashEl(document.getElementById("l2row-"+n._uid));
+      } else if(n.depth===1){
+        setView("list");
+        expandL1(n);
+        flashEl(document.getElementById("l1card-"+n._uid));
+      }
+    }
+    function expandL1(l1){
+      var box=document.getElementById("l2box-"+l1._uid), btn=document.getElementById("l2btn-"+l1._uid);
+      if(box){ box.style.display="block"; }
+      if(btn){ btn.setAttribute("aria-expanded","true"); btn.textContent="收起细项 ↑"; }
+    }
+
+    /* ============ 列表视图：13 大类逐行 ============ */
+    function quoteHtml(name){
+      var q=QUOTES[name];
+      return q ? '<div class="mini-quote">“'+esc(q)+'”</div>' : "";
+    }
+    function buildList(){
+      var html="";
+      sortedKids(DATA).forEach(function(l1){
+        var kids=sortedKids(l1);
+        html+='<article class="l1card" id="l1card-'+l1._uid+'">';
+        html+='<div class="l1head"><span class="dot" style="background:'+l1.color+'"></span>'+
+          '<span class="nm">'+esc(l1.name)+(l1.star?" ＊":"")+'</span>'+
+          '<span class="vl">'+fmt(l1.value)+'</span><span class="pc">篇 · '+pctTxt(pct(l1.value,totalHits))+'</span></div>';
+        html+='<div class="bar"><i style="width:'+Math.max(1.5,pct(l1.value,totalHits))+'%;background:'+l1.color+'"></i></div>';
+        html+='<p class="intro">'+esc(INTRO[l1.name]||"")+'</p>';
+        html+='<div class="rowbtns">'+
+          '<button class="btn primary" id="l2btn-'+l1._uid+'" data-act="kids" aria-expanded="false">查看细项 ↓</button>'+
+          (hasL3(l1)
+            ? '<button class="btn" data-act="conc">直接看具体原因 →</button>'
+            : '<button class="btn" data-act="kids2">未有第三层 · 睇细项</button>')+
+          '<button class="btn" data-act="chart">查看图</button></div>';
+        html+='<div class="l2box" id="l2box-'+l1._uid+'" style="display:none">';
+        kids.forEach(function(l2){
+          if(l2.rest){
+            html+='<div class="restrow" id="l2row-'+l2._uid+'">'+esc(l2.name)+' · '+fmt(l2.value)+' 篇 · '+pctTxt(pct(l2.value,l1.value))+'（冇明文提到更细项）</div>';
+            return;
+          }
+          html+='<div class="l2row" id="l2row-'+l2._uid+'">';
+          html+='<div class="l2head"><span class="dot" style="background:'+l2.color+'"></span>'+
+            '<span class="nm">'+esc(l2.name)+'</span>'+
+            '<span class="vl">约 '+fmt(l2.value)+'</span><span class="pc">篇 · '+pctTxt(pct(l2.value,l1.value))+'</span></div>';
+          html+='<div class="bar"><i style="width:'+Math.max(1.5,pct(l2.value,l1.value))+'%;background:'+l2.color+'"></i></div>';
+          html+='<div class="rate">每 100 篇「'+esc(l1.name)+'」记录有 '+l2.rate+' 篇提到呢项</div>';
+          if(l2.children && l2.children.length){
+            html+='<div class="l2btns">'+
+              '<button class="btn small primary" data-jumpbranch="'+l2._uid+'">直接睇具体原因 ↓</button>'+
+              '<button class="btn small" data-togglet3="'+l2._uid+'" aria-expanded="false">喺度展开具体原因</button></div>';
+            html+='<div class="l3box" id="l3box-'+l2._uid+'" style="display:none">';
+            sortedKids(l2).forEach(function(l3){
+              if(l3.rest){
+                html+='<div class="restrow">'+esc(l3.name)+' · '+fmt(l3.value)+' 篇（冇明文讲到，唔系漏计）</div>';
+                return;
+              }
+              html+='<div class="l3row"><div class="l3head"><span class="nm">'+esc(l3.name)+'</span>'+
+                '<span class="leafbadge">第三层 · 最具体</span>'+
+                '<span class="vl">'+l3.rate+'<span style="color:var(--ink-3);font-size:13px"> / 每百篇</span></span></div>'+
+                '<div class="rate" style="font-size:13.5px;color:var(--ink-2)">约 '+fmt(l3.value)+' 篇 · 占呢支 '+pctTxt(pct(l3.value,l2.value))+'</div>'+
+                quoteHtml(l3.name)+'</div>';
+            });
+            html+='</div>';
+          }
+          html+='</div>';
+        });
+        html+='</div></article>';
+      });
+      listView.innerHTML=html;
+      /* wire buttons */
+      sortedKids(DATA).forEach(function(l1){
+        var card=document.getElementById("l1card-"+l1._uid);
+        var kidsBtn=document.getElementById("l2btn-"+l1._uid);
+        function toggleKids(){
+          var box=document.getElementById("l2box-"+l1._uid);
+          var open=box.style.display!=="none";
+          box.style.display=open?"none":"block";
+          kidsBtn.setAttribute("aria-expanded", String(!open));
+          kidsBtn.textContent=open?"查看细项 ↓":"收起细项 ↑";
+        }
+        kidsBtn.addEventListener("click", toggleKids);
+        card.querySelectorAll("[data-act]").forEach(function(b){
+          b.addEventListener("click", function(){
+            var act=b.getAttribute("data-act");
+            if(act==="conc"){ var br=firstBranch(l1); if(br) jumpToNode(br); }
+            else if(act==="kids2"){ if(document.getElementById("l2box-"+l1._uid).style.display==="none") toggleKids(); }
+            else if(act==="chart"){ openChart(l1); }
+          });
+        });
+        card.querySelectorAll("[data-jumpbranch]").forEach(function(b){
+          b.addEventListener("click", function(){
+            var n=findByUid(b.getAttribute("data-jumpbranch")); if(n) jumpToNode(n);
+          });
+        });
+        card.querySelectorAll("[data-togglet3]").forEach(function(b){
+          b.addEventListener("click", function(){
+            var box=document.getElementById("l3box-"+b.getAttribute("data-togglet3"));
+            var open=box.style.display!=="none";
+            box.style.display=open?"none":"block";
+            b.setAttribute("aria-expanded", String(!open));
+            b.textContent=open?"喺度展开具体原因":"收起具体原因 ↑";
+          });
+        });
+      });
+    }
+    function findByUid(uid){ var f=allNodes.filter(function(n){return n._uid===uid;}); return f.length?f[0]:null; }
+
+    /* ============ 具体原因视图：17 支 × 全部第三层 ============ */
+    function buildConcrete(){
+      var jumps=document.getElementById("branchJumps"), groups=document.getElementById("concGroups");
+      var jhtml="", ghtml="";
+      branches.forEach(function(l2){
+        var l1=l2.parent;
+        jhtml+='<button data-branchjump="'+l2._uid+'">'+esc(l1.name)+' › '+esc(l2.name)+'</button>';
+        ghtml+='<section class="cgroup" id="branch-'+l2._uid+'">';
+        ghtml+='<div class="gpath">'+esc(l1.name)+' › '+esc(l2.name)+'</div>';
+        ghtml+='<h3>'+esc(l2.name)+' 嘅具体原因</h3>';
+        ghtml+='<div class="gsub">呢支个池共 '+fmt(l2.pool||l2.value)+' 篇记录（实数） · 下面每项数字 = 每 100 篇呢支记录有几多篇'+
+          ' &nbsp;<button class="btn small" data-branchchart="'+l2._uid+'">喺图度睇呢支</button></div>';
+        var items=sortedKids(l2).filter(function(x){return !x.rest;});
+        var rest=sortedKids(l2).filter(function(x){return x.rest;})[0];
+        var maxRate=Math.max.apply(null, items.map(function(x){return x.rate||0;}));
+        items.forEach(function(l3){
+          ghtml+='<div class="crow" id="crow-'+l3._uid+'">'+
+            '<div class="l3head"><span class="nm">'+esc(l3.name)+'</span>'+
+            '<span class="leafbadge">第三层 · 最具体原因</span>'+
+            '<span class="vl">'+l3.rate+'<span style="color:var(--ink-3);font-size:13px"> / 每百篇</span></span></div>'+
+            '<div class="bar"><i style="width:'+Math.max(2, (l3.rate/maxRate)*100)+'%;background:'+l3.color+'"></i></div>'+
+            '<div class="rate" style="font-size:13.5px;color:var(--ink-2);margin-top:5px">约 '+fmt(l3.value)+' 篇</div>'+
+            (QUOTES[l3.name] ? '<div class="quote"><div class="q-t">“'+esc(QUOTES[l3.name])+'”</div><div class="q-l">记录入面嘅原句（节录）</div></div>' : "")+
+            '</div>';
+        });
+        if(rest) ghtml+='<div class="restrow">池内其他／未明文 · '+fmt(rest.value)+' 篇（冇明文讲到更细原因，唔系漏计）</div>';
+        ghtml+='</section>';
+      });
+      jumps.innerHTML=jhtml; groups.innerHTML=ghtml;
+      jumps.querySelectorAll("[data-branchjump]").forEach(function(b){
+        b.addEventListener("click", function(){
+          flashEl(document.getElementById("branch-"+b.getAttribute("data-branchjump")));
+        });
+      });
+      groups.querySelectorAll("[data-branchchart]").forEach(function(b){
+        b.addEventListener("click", function(){
+          var n=findByUid(b.getAttribute("data-branchchart")); if(n) openChart(n);
+        });
+      });
+    }
+
+    /* ============ 圈图（次要视图） ============ */
+    var svg=document.getElementById("sun");
+    var NS="http://www.w3.org/2000/svg";
+    var CX=380, CY=380, R=372, CENTER_R=104;
+    var focus=DATA, selected=DATA;
+
+    function maxDepth(node){ if(!node.children||!node.children.length) return 0;
+      return 1+Math.max.apply(null, node.children.map(maxDepth)); }
+    function layout(node, a0, a1, depth){
+      node._a0=a0; node._a1=a1; node._d=depth;
+      if(!node.children||!node.children.length) return;
+      var sum=node.children.reduce(function(s,c){return s+c.value;},0);
+      var a=a0;
+      node.children.forEach(function(c){
+        var w=(a1-a0)*(sum>0? c.value/sum : 0);
+        layout(c, a, a+w, depth+1); a+=w;
+      });
+    }
+    function arcPath(r0, r1, a0, a1){
+      if(a1-a0>Math.PI*2-0.001) a1=a0+Math.PI*2-0.001;
+      function pt(r,a){ return [CX+r*Math.sin(a), CY-r*Math.cos(a)]; }
+      var p1=pt(r1,a0), p2=pt(r1,a1), p3=pt(r0,a1), p4=pt(r0,a0);
+      var laf=(a1-a0)>Math.PI?1:0;
+      return "M"+p1[0].toFixed(1)+","+p1[1].toFixed(1)+
+        " A"+r1+","+r1+" 0 "+laf+" 1 "+p2[0].toFixed(1)+","+p2[1].toFixed(1)+
+        " L"+p3[0].toFixed(1)+","+p3[1].toFixed(1)+
+        " A"+r0+","+r0+" 0 "+laf+" 0 "+p4[0].toFixed(1)+","+p4[1].toFixed(1)+" Z";
+    }
+    function render(){
+      while(svg.firstChild) svg.removeChild(svg.firstChild);
+      layout(focus, 0, Math.PI*2, 0);
+      var md, arcs=[];
+      if(focus===DATA){
+        md=1; arcs=DATA.children.slice(); /* 全图只画大分类一圈，唔画入面灰格 */
+      } else {
+        md=Math.max(1, maxDepth(focus));
+        (function collect(n){ (n.children||[]).forEach(function(c){ if(!c.rest){ arcs.push(c); collect(c); } }); })(focus);
+      }
+      var ringT=(R-CENTER_R)/md;
+      arcs.forEach(function(n){
+        var rel=n._d;
+        var r1=CENTER_R+(md-rel+1)*ringT-1.5, r0=CENTER_R+(md-rel)*ringT+1.5;
+        var p=document.createElementNS(NS,"path");
+        p.setAttribute("d", arcPath(r0,r1,n._a0,n._a1));
+        p.setAttribute("fill", n.color||"#ccc");
+        p.setAttribute("class","arc"+(n===selected?" selected":""));
+        p.addEventListener("click", function(ev){ ev.stopPropagation(); onArcClick(n); });
+        p.addEventListener("mouseenter", function(){ if(window.matchMedia("(hover:hover)").matches) showPanel(n,false); });
+        var t=document.createElementNS(NS,"title");
+        t.textContent=n.name+" · 约 "+fmt(n.value)+" 篇";
+        p.appendChild(t);
+        svg.appendChild(p);
+        var ang=n._a1-n._a0, mid=(n._a0+n._a1)/2, rm=(r0+r1)/2;
+        var minAng = rel===1?0.10 : rel===2?0.07 : 0.20;
+        if(ang>minAng){
+          var txt=document.createElementNS(NS,"text");
+          var deg=mid*180/Math.PI;
+          var x=CX+rm*Math.sin(mid), y=CY-rm*Math.cos(mid);
+          txt.setAttribute("x",x); txt.setAttribute("y",y);
+          txt.setAttribute("transform","rotate("+(deg>180? deg+90 : deg-90)+" "+x+" "+y+")");
+          txt.setAttribute("text-anchor","middle"); txt.setAttribute("dominant-baseline","middle");
+          txt.setAttribute("font-size", rel===1?15 : 13);
+          txt.setAttribute("fill", rel===3? "#2c2620" : "#fff");
+          var label=n.name;
+          var maxCh=Math.max(3, Math.floor(ang*rm/13));
+          if(label.length>maxCh) label=label.slice(0,maxCh-1)+"…";
+          txt.textContent=label;
+          svg.appendChild(txt);
+        }
+      });
+      var ci=document.getElementById("centerInner");
+      var back = focus!==DATA ? '<button id="upBtn">↑ 返回上一层</button>' : '';
+      ci.innerHTML='<div class="cname">'+(focus===DATA?"全部":esc(focus.name))+'</div>'+
+        '<div class="cval">'+(focus===DATA? (META.docLabel+" "+fmt(META.docTotal)+" 篇 · 撳一格入嗰支") : "约 "+fmt(focus.value)+" 篇 · 占上层 "+pctTxt(pct(focus.value, focus.parent.value)))+'</div>'+back;
+      var ub=document.getElementById("upBtn");
+      if(ub) ub.addEventListener("click", function(){ setFocus(focus.parent||DATA); });
+      document.getElementById("chartHint").textContent = focus===DATA
+        ? "全图只画最外圈 "+DATA.children.length+" 个大分类。撳任何一格入嗰支，先会画埋佢嘅细项同具体项；未细分嘅部分唔画灰格，篇数喺右边清单列明。"
+        : "而家放大紧「"+focus.name+"」呢支：外圈系佢嘅下一层，入面嗰圈系再细一层。撳中心或者上面路径返上层。";
+      renderCrumbs();
+    }
+    function onArcClick(n){
+      selected=n;
+      if(n.children && n.children.length && n!==focus){ setFocus(n); }
+      else { render(); showPanel(n,true); }
+    }
+    function setFocus(n){
+      focus=n; selected=n; render(); showPanel(n,true);
+    }
+    function renderCrumbs(){
+      var nav=document.getElementById("crumbs");
+      var chain=[DATA].concat(pathOf(focus));
+      nav.innerHTML='<span class="clab">你而家喺：</span>';
+      chain.forEach(function(n,i){
+        if(i>0){ var s=document.createElement("span"); s.className="sep"; s.textContent="›"; nav.appendChild(s); }
+        var b=document.createElement("button");
+        b.textContent= n===DATA? "全图" : n.name;
+        if(n===focus) b.className="cur";
+        b.addEventListener("click", function(){ setFocus(n); });
+        nav.appendChild(b);
+      });
+      if(selected && selected!==focus){
+        var sp=document.createElement("span");
+        sp.style.cssText="font-size:14px;color:var(--ink-2)";
+        sp.textContent=" · 㩒中咗：「"+selected.name+"」";
+        nav.appendChild(sp);
+      }
+    }
+
+    /* ============ 圈图明细面板 ============ */
+    function showPanel(n, fromTap){
+      selected=n;
+      var panel=document.getElementById("panel");
+      var path=pathOf(n).map(function(x){return x.name;}).join(" › ");
+      var html='<div class="kicker">'+levelName(n.depth)+(path? " · "+path : "")+'</div>';
+      html+='<h2>'+esc(n.name)+(n.star?' <span style="color:var(--ink-3)">*</span>':"")+'</h2>';
+      if(n===DATA){
+        html+='<div class="big">'+META.docLabel+' <b>'+fmt(META.docTotal)+'</b> 篇 · 分类命中 <b>'+fmt(totalHits)+'</b> 次</div>';
+        html+='<p class="intro">全图只画最外圈大分类。撳图入面任何一个大类，或者撳下面清单，成支放大嚟睇。</p>';
+      } else {
+        html+='<div class="big">约 <b>'+fmt(n.value)+'</b> 篇 · 占'+(n.parent===DATA?"全部命中":("「"+esc(n.parent.name)+"」"))+' <b>'+pctTxt(pct(n.value,n.parent.value))+'</b></div>';
+        if(n.depth===1 && INTRO[n.name]) html+='<p class="intro">'+esc(INTRO[n.name])+'</p>';
+        if(n.depth===2 && n.rate!=null) html+='<span class="badge">每 100 篇大类记录有 '+n.rate+' 篇</span>';
+        if(n.star && n.depth===1) html+='<span class="badge warn">＊较松口径 · 数字当上限睇</span>';
+        if(n.rest) html+='<p class="intro">冇明文提到更细项嘅部分，唔系漏计。</p>';
+      }
+      if(n.depth===3 && !n.rest){
+        html+='<div class="leafbanner"><div class="lt">✅ 呢个已经系最具体原因（第三层）</div>'+
+          '<div class="ld"><b>'+esc(n.name)+'</b>：每 100 篇「'+esc(n.parent.name)+'」记录有 <b>'+n.rate+'</b> 篇 · 约 '+fmt(n.value)+' 篇</div></div>';
+      }
+      var q=QUOTES[n.name];
+      if(q) html+='<div class="quote"><div class="q-t">“'+esc(q)+'”</div><div class="q-l">记录入面嘅原句（节录）</div></div>';
+      if(n.children && n.children.length){
+        var kids=sortedKids(n);
+        html+='<ul class="childlist">';
+        kids.forEach(function(c){
+          if(c.rest){
+            html+='<li><div style="padding:12px 2px;color:var(--ink-3);font-size:14px">'+esc(c.name)+' · '+fmt(c.value)+' 篇（冇明文，唔系漏计）</div></li>';
+            return;
+          }
+          var col=c.color;
+          html+='<li><button class="row" data-name="'+esc(c.name)+'">'+
+            '<span class="r1"><span class="nm">'+esc(c.name)+'</span><span><span class="vl">'+fmt(c.value)+'</span><span class="pc">篇 · '+pctTxt(pct(c.value,n.value))+'</span></span></span>'+
+            '<span class="bar"><i style="width:'+Math.max(1.5,pct(c.value,n.value))+'%;background:'+col+'"></i></span>'+
+            (c.children&&c.children.length? '<span class="note">'+(c.depth===1? "撳入去放大呢支 ›" : "撳入去睇第三层 ›")+'</span>':"")+
+            '</button></li>';
+        });
+        html+='</ul>';
+        if(n!==DATA) html+='<p class="foot-note">比例系相对呢一层嘅占比；各细项可以重叠（同一篇记录可命中多项），所以加埋唔一定等于 100%。</p>';
+      } else if(n!==DATA && n.depth!==3){
+        html+='<p class="foot-note">呢项去到第二层为止，暂未再细分。</p>';
+      }
+      html+='<button class="btn small backchart" id="backChartBtn">↑ 返去幅图</button>';
+      panel.innerHTML=html;
+      panel.querySelectorAll("button.row").forEach(function(btn){
+        btn.addEventListener("click", function(){
+          var name=btn.getAttribute("data-name");
+          var target=(n.children||[]).filter(function(c){return c.name===name;})[0];
+          if(!target) return;
+          selected=target;
+          if(target.children&&target.children.length) setFocus(target); else { render(); showPanel(target,true); }
+        });
+      });
+      var bc=document.getElementById("backChartBtn");
+      if(bc) bc.addEventListener("click", function(){
+        document.querySelector(".chart-card").scrollIntoView({block:"start", behavior:"smooth"});
+      });
+      renderCrumbs();
+      if(fromTap && curView==="chart" && window.innerWidth<=900){
+        panel.scrollIntoView({block:"start", behavior:"smooth"});
+      }
+    }
+
+    /* ============ 搜寻 + 热门 chips ============ */
+    var searchInput=document.getElementById("search"), results=document.getElementById("results");
+    searchInput.addEventListener("input", function(){
+      var q=searchInput.value.trim();
+      if(!q){ results.className="results"; results.innerHTML=""; return; }
+      var hits=allNodes.filter(function(n){ return !n.rest && n.name.indexOf(q)>=0; }).slice(0,12);
+      if(!hits.length){ results.innerHTML='<button disabled>搵唔到「'+esc(q)+'」</button>'; results.className="results open"; return; }
+      results.innerHTML="";
+      hits.forEach(function(n){
+        var b=document.createElement("button");
+        b.innerHTML=esc(n.name)+' <span class="path">'+pathOf(n.parent).map(function(x){return esc(x.name);}).join(" › ")+' · 约 '+fmt(n.value)+' 篇</span>';
+        b.addEventListener("click", function(){
+          results.className="results"; searchInput.value="";
+          jumpToNode(n);
+        });
+        results.appendChild(b);
+      });
+      results.className="results open";
+    });
+    document.addEventListener("click", function(e){
+      if(!e.target.closest(".searchbox")) results.className="results";
+    });
+    document.querySelectorAll("[data-chip]").forEach(function(b){
+      b.addEventListener("click", function(){
+        var n=findNode(b.getAttribute("data-chip"));
+        if(n) jumpToNode(n);
+      });
+    });
+
+/* ===== YEAR DATA: replace this block =====
+    var YEAR_DATA={"posts":{"totN":11842,"tot":{"苹果类":27.5,"柑橘类":24.8,"莓果类":18.5,"热带水果":16.1,"瓜类":9.0,"礼赠类":5.6},"totHl":[13.6,19.6,40.7],"years":{"2022":{"n":2410,"long":3120,"p":{"苹果类":28.4,"柑橘类":24.1,"莓果类":17.2,"热带水果":15.8,"瓜类":9.3,"礼赠类":4.9},"c":{"苹果类":684,"柑橘类":581,"莓果类":415,"热带水果":381,"瓜类":224,"礼赠类":118},"hl":[12.4,17.8,38.5],"hlC":[299,429,928]},"2023":{"n":2985,"long":3860,"p":{"苹果类":27.9,"柑橘类":24.6,"莓果类":18.1,"热带水果":16.2,"瓜类":9.0,"礼赠类":5.3},"c":{"苹果类":833,"柑橘类":734,"莓果类":540,"热带水果":484,"瓜类":269,"礼赠类":158},"hl":[13.1,18.9,39.8],"hlC":[391,564,1188]},"2024":{"n":3312,"long":4205,"p":{"苹果类":27.2,"柑橘类":25.0,"莓果类":18.8,"热带水果":15.9,"瓜类":8.7,"礼赠类":5.8},"c":{"苹果类":901,"柑橘类":828,"莓果类":623,"热带水果":527,"瓜类":288,"礼赠类":192},"hl":[14.0,20.1,41.2],"hlC":[464,666,1365]},"2025":{"n":3135,"long":3980,"p":{"苹果类":26.8,"柑橘类":25.3,"莓果类":19.4,"热带水果":16.5,"瓜类":8.9,"礼赠类":6.1},"c":{"苹果类":840,"柑橘类":793,"莓果类":608,"热带水果":517,"瓜类":279,"礼赠类":191},"hl":[14.6,21.0,42.7],"hlC":[458,658,1339]}},"note":"示例数据嚟，换自己数据时连呢句都改埋。"},"comments":{"totN":1639,"tot":{"苹果类":25.4,"柑橘类":24.2,"莓果类":16.8,"热带水果":14.7,"瓜类":8.5,"礼赠类":4.4},"totHl":[16.0,22.3,45.3],"years":{"2022":{"n":486,"long":1930,"p":{"苹果类":26.1,"柑橘类":23.8,"莓果类":15.9,"热带水果":14.2,"瓜类":8.8,"礼赠类":3.9},"c":{"苹果类":127,"柑橘类":116,"莓果类":77,"热带水果":69,"瓜类":43,"礼赠类":19},"hl":[15.2,21.4,44.0],"hlC":[74,104,214]},"2023":{"n":552,"long":2210,"p":{"苹果类":25.4,"柑橘类":24.1,"莓果类":16.8,"热带水果":14.6,"瓜类":8.5,"礼赠类":4.4},"c":{"苹果类":140,"柑橘类":133,"莓果类":93,"热带水果":81,"瓜类":47,"礼赠类":24},"hl":[16.0,22.3,45.2],"hlC":[88,123,250]},"2025":{"n":601,"long":2385,"p":{"苹果类":24.9,"柑橘类":24.4,"莓果类":17.5,"热带水果":15.1,"瓜类":8.2,"礼赠类":4.8},"c":{"苹果类":150,"柑橘类":147,"莓果类":105,"热带水果":91,"瓜类":49,"礼赠类":29},"hl":[16.8,23.1,46.5],"hlC":[101,139,279]}},"note":"追评 2024 年冇数据——走势图嗰度会断开，唔系跌到零。追评好多冇写明分类，比例整体细啲，唔好同评价嗰层直接比大小。"}};
+    /* ===== END YEAR DATA ===== */
+    /* ============ 按年份视图 ============ */
+    /* YCATS：年份视图用嘅大类名（顺序 = 显示顺序），要同 YEAR_DATA 入面 p/c/tot 嘅键一致 */
+    var YCATS=["苹果类","柑橘类","莓果类","热带水果","瓜类","礼赠类"];
+    function yColor(name){ var n=findNode(name); return n? n.color : "#888888"; }
+    function ySeriesColor(s){
+      var hi=HL.series.indexOf(s);
+      if(hi>=0) return HL.colors[hi]||"#b4472a";
+      return yColor(s);
+    }
+    var yLayer="posts", yYearSel=YEAR_DEFAULT, yTrend=YCATS[0];
+    function yData(){ return YEAR_DATA[yLayer]; }
+    function yYears(){ return Object.keys(yData().years).sort(); }
+    function yVal(year, series){
+      var yd=yData().years[year]; if(!yd) return null;
+      var hi=HL.series.indexOf(series);
+      if(hi>=0) return yd.hl[hi];
+      var v=yd.p[series]; return v==null? null : v;
+    }
+    function buildYearBtns(){
+      var box=document.getElementById("yearBtns"); box.innerHTML="";
+      yYears().forEach(function(y){
+        var yd=yData().years[y];
+        var b=document.createElement("button");
+        b.setAttribute("aria-pressed", String(y===yYearSel));
+        b.innerHTML=esc(y)+(y===INCOMPLETE_YEAR?"（未完）":"")+"<span>已分类 "+fmt(yd.n)+" 篇</span>";
+        b.addEventListener("click", function(){ yYearSel=y; buildYearBtns(); renderYearCard(); });
+        box.appendChild(b);
+      });
+    }
+    function renderYearCard(){
+      var D=yData(), yd=D.years[yYearSel], card=document.getElementById("yearCard");
+      var thin=yd.n<(META.thinN||10000);
+      var html="<h3>"+esc(yYearSel)+" 年"+(yYearSel===INCOMPLETE_YEAR?"（未完，今年未过完）":"")+(thin?'<span class="thinbadge">样本较薄 · 比例易波动</span>':"")+"</h3>";
+      html+='<div class="ysub">嗰年已分类'+YEAR_LAYERS[yLayer]+' <b>'+fmt(yd.n)+'</b> 篇（喺 '+fmt(yd.long)+' 篇记录入面命中至少一个分类嗰啲）· 下面数字 = 每 100 篇有几多篇</div>';
+      html+='<div class="yhighlight"><div class="ymt">'+esc(HL.cardTitle)+'</div><div class="ymrow">'+
+        HL.series.map(function(s,i){ return "<span>"+esc(s)+" <b>"+yd.hl[i]+"</b>（"+fmt(yd.hlC[i])+" 篇）</span>"; }).join("")+"</div>"+
+        '<div class="ymnote">'+esc(HL.note)+'</div></div>';
+      var rows=YCATS.map(function(c){ return {name:c, v:yd.p[c], cnt:yd.c[c], avg:D.tot[c]}; })
+        .sort(function(a,b){ return b.v-a.v; });
+      var maxV=0; rows.forEach(function(r){ if(r.v>maxV) maxV=r.v; });
+      rows.forEach(function(r){
+        html+='<div class="yrow"><div class="l2head"><span class="dot" style="background:'+yColor(r.name)+'"></span>'+
+          '<span class="nm">'+esc(r.name)+'</span>'+
+          '<span class="vl">'+r.v+'</span><span class="pc">/ 每百篇 · '+fmt(r.cnt)+' 篇</span></div>'+
+          '<div class="bar"><i style="width:'+(maxV>0? Math.max(1.5, r.v/maxV*100):0)+'%;background:'+yColor(r.name)+'"></i></div>'+
+          '<div class="avg">全期平均 '+r.avg+' / 每百篇</div></div>';
+      });
+      card.innerHTML=html;
+      document.getElementById("yearNote").textContent =
+        YEAR_LAYERS[yLayer]+"逐年重计嘅数（共 "+fmt(D.totN)+" 篇已分类）；"+INCOMPLETE_YEAR+" 年未过完，嗰年数字会随数据更新继续变。"+(D.note||"");
+    }
+    function buildTrendChips(){
+      var box=document.getElementById("trendChips"); box.innerHTML="";
+      YCATS.concat(HL.series).forEach(function(s){
+        var b=document.createElement("button");
+        var col=ySeriesColor(s);
+        b.style.setProperty("--tc", col);
+        b.setAttribute("aria-pressed", String(s===yTrend));
+        b.innerHTML='<span class="dot" style="background:'+col+'"></span>'+esc(s);
+        b.addEventListener("click", function(){ yTrend=s; buildTrendChips(); renderTrend(); });
+        box.appendChild(b);
+      });
+    }
+    function renderTrend(){
+      var svgT=document.getElementById("trend");
+      while(svgT.firstChild) svgT.removeChild(svgT.firstChild);
+      var years=yYears().map(Number);
+      var minY=Math.min.apply(null,years), maxY=Math.max.apply(null,years);
+      var vals=years.map(function(y){ return yVal(String(y), yTrend); });
+      var maxV=0; vals.forEach(function(v){ if(v!=null && v>maxV) maxV=v; });
+      var yMax=Math.max(10, Math.ceil(maxV*1.2/10)*10);
+      var L=46, R=18, T=28, B=36, W=720, H=330, pw=W-L-R, ph=H-T-B;
+      function X(y){ return L+(maxY>minY? (y-minY)/(maxY-minY)*pw : pw/2); }
+      function Y(v){ return T+ph-(v/yMax)*ph; }
+      function el(tag, attrs, txt){
+        var e=document.createElementNS(NS, tag);
+        for(var k in attrs) e.setAttribute(k, attrs[k]);
+        if(txt!=null) e.textContent=txt;
+        svgT.appendChild(e); return e;
+      }
+      [0, yMax/2, yMax].forEach(function(gv){
+        el("line", {x1:L, y1:Y(gv), x2:L+pw, y2:Y(gv), "class":"grid"});
+        el("text", {x:L-8, y:Y(gv)+4, "text-anchor":"end", "class":"axlab"}, String(Math.round(gv)));
+      });
+      el("text", {x:2, y:14, "class":"axlab"}, "每 100 篇已分类"+YEAR_LAYERS[yLayer]);
+      var col=ySeriesColor(yTrend), i;
+      for(i=0;i<years.length-1;i++){
+        if(vals[i]==null || vals[i+1]==null) continue;
+        if(years[i+1]-years[i]!==1) continue; /* 缺年断线，唔驳埋 */
+        el("line", {x1:X(years[i]), y1:Y(vals[i]), x2:X(years[i+1]), y2:Y(vals[i+1]),
+          stroke:col, "stroke-width":2.5, "stroke-linecap":"round"});
+      }
+      years.forEach(function(y, idx){
+        if(vals[idx]!=null){
+          el("circle", {cx:X(y), cy:Y(vals[idx]), r:4.5, fill:col});
+          el("text", {x:X(y), y:Y(vals[idx])-10, "text-anchor":"middle", "class":"vlab", fill:col}, String(vals[idx]));
+        }
+        el("text", {x:X(y), y:H-12, "text-anchor":"middle", "class":"axlab"}, String(y)+(String(y)===INCOMPLETE_YEAR?"*":""));
+      });
+    }
+    function setYLayer(layer){
+      yLayer=layer;
+      document.getElementById("ylPosts").setAttribute("aria-pressed", String(layer==="posts"));
+      document.getElementById("ylComments").setAttribute("aria-pressed", String(layer==="comments"));
+      var ys=yYears();
+      if(ys.indexOf(yYearSel)<0) yYearSel = ys.indexOf(YEAR_DEFAULT)>=0? YEAR_DEFAULT : ys[ys.length-1];
+      buildYearBtns(); renderYearCard(); renderTrend();
+    }
+    document.getElementById("ylPosts").addEventListener("click", function(){ setYLayer("posts"); });
+    document.getElementById("ylComments").addEventListener("click", function(){ setYLayer("comments"); });
+    buildYearBtns(); buildTrendChips(); renderYearCard(); renderTrend();
+
+    /* ============ 初始化 ============ */
+    buildList();
+    buildConcrete();
+    setView("list");
+    render();
+    showPanel(DATA,false);
+    </script>
+  </body>
+</html>
