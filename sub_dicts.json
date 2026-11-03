@@ -1,0 +1,1677 @@
+{
+ "window_chars": 150,
+ "spec": {
+  "家庭/父母": {
+   "父母控制/高压": {
+    "P": [
+     "controlling parents",
+     "controlling mother",
+     "controlling father",
+     "strict parents",
+     "helicopter parent",
+     "tiger mom",
+     "my parents control",
+     "control my life",
+     "控制欲",
+     "逼我",
+     "管得严",
+     "strict mom",
+     "strict dad",
+     "strict mother",
+     "strict father",
+     "my parents won't let",
+     "my mom won't let",
+     "my dad won't let",
+     "not allowed to",
+     "grounded me"
+    ],
+    "C": [
+     [
+      [
+       "mom",
+       "mother",
+       "mum",
+       "mama",
+       "dad",
+       "father",
+       "papa",
+       "parents",
+       "stepdad",
+       "stepmom",
+       "stepfather",
+       "stepmother"
+      ],
+      [
+       "control",
+       "controlling",
+       "won't let me",
+       "wouldn't let me",
+       "not allowed",
+       "forbade",
+       "forced me to",
+       "made me quit",
+       "checks my phone",
+       "tracks my"
+      ]
+     ]
+    ]
+   },
+   "家暴/父母冲突": {
+    "P": [
+     "abusive father",
+     "abusive mother",
+     "my dad hit",
+     "my mom hit",
+     "parents fighting",
+     "parents fought",
+     "yelled at me",
+     "screaming at me",
+     "家暴",
+     "打我",
+     "父母吵架"
+    ],
+    "C": [
+     [
+      [
+       "mom",
+       "mother",
+       "mum",
+       "mama",
+       "dad",
+       "father",
+       "papa",
+       "parents",
+       "stepdad",
+       "stepmom",
+       "stepfather",
+       "stepmother"
+      ],
+      [
+       "hit me",
+       "hitting",
+       "beat me",
+       "beating",
+       "yelled",
+       "yelling",
+       "screamed",
+       "screaming",
+       "threw",
+       "punched",
+       "slapped",
+       "fighting",
+       "fought",
+       "argument every",
+       "abusive",
+       "violent",
+       "drunk",
+       "alcoholic",
+       "alcohol problem",
+       "rage"
+      ]
+     ]
+    ]
+   },
+   "冷漠/忽视": {
+    "P": [
+     "emotionally unavailable",
+     "neglected",
+     "never hugged",
+     "never said i love",
+     "cold mother",
+     "cold father",
+     "didn't care about me",
+     "不管我",
+     "冷漠",
+     "忽视",
+     "never there for me",
+     "emotionally distant",
+     "never showed affection",
+     "love was conditional"
+    ],
+    "C": [
+     [
+      [
+       "mom",
+       "mother",
+       "mum",
+       "mama",
+       "dad",
+       "father",
+       "papa",
+       "parents",
+       "stepdad",
+       "stepmom",
+       "stepfather",
+       "stepmother"
+      ],
+      [
+       "never loved",
+       "didn't love",
+       "never cared",
+       "didn't care about me",
+       "ignored me",
+       "neglect",
+       "absent",
+       "never hugged",
+       "never proud"
+      ]
+     ]
+    ]
+   },
+   "父母离异/缺位": {
+    "P": [
+     "parents divorced",
+     "parents' divorce",
+     "single mother",
+     "single father",
+     "dad left",
+     "father left",
+     "absent father",
+     "父母离婚",
+     "单亲",
+     "爸爸走了"
+    ],
+    "C": [
+     [
+      [
+       "mom",
+       "mother",
+       "mum",
+       "mama",
+       "dad",
+       "father",
+       "papa",
+       "parents",
+       "stepdad",
+       "stepmom",
+       "stepfather",
+       "stepmother"
+      ],
+      [
+       "divorced",
+       "divorce",
+       "left us",
+       "left when",
+       "walked out",
+       "never around",
+       "wasn't there",
+       "single parent"
+      ]
+     ]
+    ]
+   },
+   "期望/比较压力": {
+    "P": [
+     "parents' expectations",
+     "high expectations",
+     "disappointed in me",
+     "compared me to",
+     "never good enough for my parents",
+     "望子成龙",
+     "不如别人",
+     "对我失望"
+    ],
+    "C": [
+     [
+      [
+       "mom",
+       "mother",
+       "mum",
+       "mama",
+       "dad",
+       "father",
+       "papa",
+       "parents",
+       "stepdad",
+       "stepmom",
+       "stepfather",
+       "stepmother"
+      ],
+      [
+       "expectations",
+       "expected me",
+       "disappointed",
+       "disappointment",
+       "pressure to",
+       "compared",
+       "never good enough",
+       "proud of me"
+      ]
+     ]
+    ]
+   },
+   "照顾患病家人": {
+    "P": [
+     "caregiver",
+     "taking care of my mom",
+     "taking care of my dad",
+     "caring for my mother",
+     "caring for my father",
+     "my mom's dementia",
+     "照顾我妈",
+     "照顾我爸",
+     "看护",
+     "taking care of my",
+     "care for my mom",
+     "care for my dad",
+     "mom has dementia",
+     "dad has dementia",
+     "mom's cancer",
+     "dad's cancer",
+     "mom is sick",
+     "dad is sick"
+    ],
+    "C": [
+     [
+      [
+       "mom",
+       "mother",
+       "mum",
+       "mama",
+       "dad",
+       "father",
+       "papa",
+       "parents",
+       "stepdad",
+       "stepmom",
+       "stepfather",
+       "stepmother"
+      ],
+      [
+       "taking care of",
+       "caregiver",
+       "dementia",
+       "alzheimer",
+       "terminally ill",
+       "bedridden"
+      ]
+     ]
+    ]
+   },
+   "兄弟姐妹问题": {
+    "P": [
+     "my sister is",
+     "my brother is",
+     "sister has depression",
+     "brother has depression",
+     "sibling rivalry",
+     "golden child",
+     "my sister hates",
+     "my brother hates"
+    ],
+    "C": [
+     [
+      [
+       "brother",
+       "sister",
+       "sibling"
+      ],
+      [
+       "abusive",
+       "toxic",
+       "bully",
+       "bullied me",
+       "jealous",
+       "fights",
+       "fighting",
+       "hate each other"
+      ]
+     ]
+    ]
+   }
+  },
+  "工作/学业": {
+   "过劳/倦怠": {
+    "P": [
+     "burnout",
+     "burned out",
+     "overworked",
+     "no work-life",
+     "60 hours",
+     "overtime every",
+     "加班",
+     "过劳",
+     "996",
+     "倦怠"
+    ],
+    "C": []
+   },
+   "失业/求职失败": {
+    "P": [
+     "unemployed",
+     "can't find a job",
+     "cannot find a job",
+     "got fired",
+     "laid off",
+     "lost my job",
+     "job hunting",
+     "失业",
+     "找不到工作",
+     "被裁"
+    ],
+    "C": []
+   },
+   "上司/同事/职场霸凌": {
+    "P": [
+     "my boss",
+     "toxic boss",
+     "bullied at work",
+     "workplace bullying",
+     "coworkers hate",
+     "上司",
+     "职场霸凌",
+     "被同事"
+    ],
+    "C": []
+   },
+   "学业/考试压力": {
+    "P": [
+     "exam",
+     "grades",
+     "failed my",
+     "thesis",
+     "gpa",
+     "finals",
+     "考试",
+     "成绩",
+     "论文",
+     "挂科",
+     "高考"
+    ],
+    "C": []
+   },
+   "校园霸凌": {
+    "P": [
+     "bullied at school",
+     "bullied by classmates",
+     "school bullying",
+     "校园霸凌",
+     "被同学欺负",
+     "霸凌"
+    ],
+    "C": []
+   },
+   "厌恶工作/无意义": {
+    "P": [
+     "hate my job",
+     "hate my major",
+     "meaningless job",
+     "soul-crushing",
+     "讨厌工作",
+     "不想上班",
+     "工作没意义"
+    ],
+    "C": []
+   }
+  },
+  "亲密关系": {
+   "分手/被拒": {
+    "P": [
+     "breakup",
+     "broke up",
+     "dumped me",
+     "she left me",
+     "he left me",
+     "rejected me",
+     "分手",
+     "被甩",
+     "被拒绝"
+    ],
+    "C": []
+   },
+   "出轨/背叛": {
+    "P": [
+     "cheated on me",
+     "she cheated",
+     "he cheated",
+     "betrayed",
+     "betrayal",
+     "出轨",
+     "背叛",
+     "绿我"
+    ],
+    "C": []
+   },
+   "伴侣虐待/控制": {
+    "P": [
+     "abusive boyfriend",
+     "abusive girlfriend",
+     "abusive husband",
+     "abusive wife",
+     "abusive partner",
+     "he hits me",
+     "she hits me",
+     "控制欲男友",
+     "家暴男友"
+    ],
+    "C": []
+   },
+   "离婚/分居": {
+    "P": [
+     "divorce",
+     "divorced",
+     "ex-wife",
+     "ex-husband",
+     "separated",
+     "离婚",
+     "前妻",
+     "前夫"
+    ],
+    "C": []
+   },
+   "长期单身/求偶失败": {
+    "P": [
+     "never had a girlfriend",
+     "never had a boyfriend",
+     "forever alone",
+     "no one wants me",
+     "incel",
+     "母胎单身",
+     "没人要",
+     "单身久了"
+    ],
+    "C": []
+   },
+   "异地/感情变淡": {
+    "P": [
+     "long distance",
+     "long-distance",
+     "lost feelings",
+     "fell out of love",
+     "异地恋",
+     "没感觉了",
+     "感情淡了"
+    ],
+    "C": []
+   }
+  },
+  "孤独/孤立": {
+   "没朋友": {
+    "P": [
+     "no friends",
+     "friendless",
+     "have no friends",
+     "zero friends",
+     "没朋友",
+     "一个朋友都没有"
+    ],
+    "C": []
+   },
+   "独居/迁居隔离": {
+    "P": [
+     "live alone",
+     "living alone",
+     "moved to a new city",
+     "moved away",
+     "no one to talk to",
+     "独居",
+     "搬到新城市",
+     "没人说话"
+    ],
+    "C": []
+   },
+   "格格不入/被排斥": {
+    "P": [
+     "don't fit in",
+     "do not fit in",
+     "outcast",
+     "left out",
+     "excluded",
+     "融不进去",
+     "被排斥",
+     "格格不入",
+     "no one invites me",
+     "never invited",
+     "always the outsider",
+     "feel invisible",
+     "nobody notices"
+    ],
+    "C": []
+   },
+   "自我隔离/退缩": {
+    "P": [
+     "isolated myself",
+     "isolate myself",
+     "isolating myself",
+     "withdrawn",
+     "stopped talking to everyone",
+     "cut everyone off",
+     "pushed everyone away",
+     "自我隔离",
+     "断了联系"
+    ],
+    "C": [
+     [
+      [
+       "isolated",
+       "isolating",
+       "withdrawn"
+      ],
+      [
+       "myself",
+       "from everyone",
+       "from people"
+      ]
+     ]
+    ]
+   },
+   "社交焦虑导致": {
+    "P": [
+     "social anxiety",
+     "too anxious to talk",
+     "scared to talk to people",
+     "can't talk to people",
+     "afraid of people",
+     "社交焦虑",
+     "社恐"
+    ],
+    "C": []
+   }
+  },
+  "疾病/疼痛": {
+   "慢性疼痛": {
+    "P": [
+     "chronic pain",
+     "back pain",
+     "fibromyalgia",
+     "migraine",
+     "慢性疼痛",
+     "腰痛",
+     "偏头痛",
+     "chronic pain",
+     "nerve pain",
+     "joint pain",
+     "pain every day",
+     "constant pain"
+    ],
+    "C": []
+   },
+   "重病确诊": {
+    "P": [
+     "diagnosed with cancer",
+     "i have cancer",
+     "terminal",
+     "diagnosed with ms",
+     "癌症",
+     "确诊",
+     "绝症"
+    ],
+    "C": []
+   },
+   "残障/行动受限": {
+    "P": [
+     "disability",
+     "disabled",
+     "wheelchair",
+     "can't walk",
+     "残疾",
+     "坐轮椅",
+     "行动不便"
+    ],
+    "C": []
+   },
+   "长期慢性病": {
+    "P": [
+     "chronic illness",
+     "diabetes",
+     "autoimmune",
+     "chronic fatigue",
+     "慢性病",
+     "糖尿病",
+     "自身免疫",
+     "chronic illness",
+     "health problems",
+     "health issues",
+     "auto immune"
+    ],
+    "C": []
+   },
+   "癌症": {
+    "P": [
+     "cancer",
+     "chemo",
+     "chemotherapy",
+     "tumor",
+     "tumour",
+     "oncolog",
+     "癌症",
+     "化疗"
+    ],
+    "C": []
+   },
+   "确诊抑郁/精神病本身": {
+    "P": [
+     "diagnosed with depression",
+     "diagnosed depression",
+     "major depressive disorder",
+     "mdd",
+     "depressive disorder",
+     "diagnosed with mdd",
+     "临床抑郁",
+     "重度抑郁"
+    ],
+    "C": []
+   }
+  },
+  "童年创伤/虐待": {
+   "身体虐待": {
+    "P": [
+     "physically abused",
+     "used to beat me",
+     "beat me",
+     "spanked",
+     "hit me as a child",
+     "打骂",
+     "体罚",
+     "揍我",
+     "hit me with",
+     "beat me with",
+     "belt",
+     "spanked me"
+    ],
+    "C": [
+     [
+      [
+       "mom",
+       "mother",
+       "mum",
+       "mama",
+       "dad",
+       "father",
+       "papa",
+       "parents",
+       "stepdad",
+       "stepmom",
+       "stepfather",
+       "stepmother",
+       "stepdad",
+       "stepfather"
+      ],
+      [
+       "beat me",
+       "hit me",
+       "hitting me",
+       "spanked",
+       "whipped",
+       "belt",
+       "bruises"
+      ]
+     ]
+    ]
+   },
+   "性虐待": {
+    "P": [
+     "sexually abused",
+     "molested",
+     "sexual abuse",
+     "raped as",
+     "性侵",
+     "猥亵",
+     "性虐待",
+     "touched me",
+     "abused me sexually",
+     "csa"
+    ],
+    "C": [
+     [
+      [
+       "uncle",
+       "cousin",
+       "stepdad",
+       "stepfather",
+       "grandfather",
+       "family friend",
+       "babysitter",
+       "neighbor"
+      ],
+      [
+       "molested",
+       "touched me",
+       "sexual",
+       "raped",
+       "abused me"
+      ]
+     ]
+    ]
+   },
+   "情感虐待/贬低": {
+    "P": [
+     "emotionally abusive",
+     "called me worthless",
+     "called me stupid",
+     "belittled",
+     "verbal abuse",
+     "冷暴力",
+     "骂我废物",
+     "贬低",
+     "walking on eggshells",
+     "screamed at me",
+     "always yelling"
+    ],
+    "C": [
+     [
+      [
+       "mom",
+       "mother",
+       "mum",
+       "mama",
+       "dad",
+       "father",
+       "papa",
+       "parents",
+       "stepdad",
+       "stepmom",
+       "stepfather",
+       "stepmother"
+      ],
+      [
+       "yelled",
+       "screamed",
+       "called me",
+       "worthless",
+       "stupid",
+       "useless",
+       "blamed me",
+       "silent treatment",
+       "gaslight",
+       "narcissist",
+       "narcissistic"
+      ]
+     ]
+    ]
+   },
+   "童年忽视": {
+    "P": [
+     "neglected as a child",
+     "childhood neglect",
+     "left alone as a kid",
+     "no one took care",
+     "小时候没人管",
+     "被忽视",
+     "raised myself",
+     "had to raise myself",
+     "parentified",
+     " latchkey"
+    ],
+    "C": [
+     [
+      [
+       "as a kid",
+       "as a child",
+       "growing up",
+       "childhood"
+      ],
+      [
+       "neglected",
+       "left alone",
+       "on my own",
+       "no one cared",
+       "ignored",
+       "abandoned"
+      ]
+     ]
+    ]
+   },
+   "目睹家暴/家庭破裂": {
+    "P": [
+     "watched my dad hit",
+     "saw my father hit",
+     "parents fought all the time",
+     "violent home",
+     "目睹家暴",
+     "父母天天吵架",
+     "grew up in a house",
+     "household was",
+     "walking on eggshells"
+    ],
+    "C": [
+     [
+      [
+       "growing up",
+       "as a kid",
+       "childhood",
+       "at home"
+      ],
+      [
+       "fighting",
+       "violence",
+       "violent",
+       "screaming",
+       "drunk",
+       "alcoholic",
+       "chaos",
+       "chaotic",
+       "unstable"
+      ]
+     ]
+    ]
+   },
+   "父母酗酒/成瘾": {
+    "P": [
+     "alcoholic father",
+     "alcoholic mother",
+     "alcoholic dad",
+     "alcoholic mom",
+     "dad was an alcoholic",
+     "mom was an alcoholic",
+     "parent's drinking",
+     "drug addict father",
+     "drug addict mother"
+    ],
+    "C": [
+     [
+      [
+       "mom",
+       "mother",
+       "mum",
+       "mama",
+       "dad",
+       "father",
+       "papa",
+       "parents",
+       "stepdad",
+       "stepmom",
+       "stepfather",
+       "stepmother"
+      ],
+      [
+       "alcoholic",
+       "drinking problem",
+       "addict",
+       "addiction",
+       "drunk every",
+       "rehab"
+      ]
+     ]
+    ]
+   }
+  },
+  "丧亲/丧失": {
+   "丧父/丧母": {
+    "P": [
+     "lost my mom",
+     "lost my dad",
+     "my mother died",
+     "my father died",
+     "mom passed away",
+     "dad passed away",
+     "妈妈去世",
+     "爸爸去世",
+     "母亲过世"
+    ],
+    "C": []
+   },
+   "丧偶": {
+    "P": [
+     "lost my wife",
+     "lost my husband",
+     "my wife died",
+     "my husband died",
+     "widow",
+     "widower",
+     "丧偶",
+     "老婆去世",
+     "老公去世"
+    ],
+    "C": [
+     [
+      [
+       "wife",
+       "husband",
+       "spouse",
+       "partner"
+      ],
+      [
+       "died",
+       "passed away",
+       "funeral",
+       "buried",
+       "death of",
+       "killed himself",
+       "killed herself"
+      ]
+     ]
+    ]
+   },
+   "丧子/流产": {
+    "P": [
+     "lost my baby",
+     "lost my son",
+     "lost my daughter",
+     "lost my child",
+     "lost our baby",
+     "my baby died",
+     "my son died",
+     "my daughter died",
+     "my child died",
+     "baby passed away",
+     "son passed away",
+     "daughter passed away",
+     "miscarriage",
+     "miscarried",
+     "stillborn",
+     "stillbirth",
+     "lost my pregnancy",
+     "lost the baby",
+     "lost my unborn",
+     "流产",
+     "小产",
+     "孩子去世",
+     "儿子去世",
+     "女儿去世"
+    ],
+    "C": []
+   },
+   "亲友自杀身亡": {
+    "P": [
+     "friend killed himself",
+     "brother killed himself",
+     "friend's suicide",
+     "lost my friend to suicide",
+     "朋友自杀",
+     "哥哥自杀"
+    ],
+    "C": [
+     [
+      [
+       "friend",
+       "brother",
+       "sister",
+       "cousin",
+       "boyfriend",
+       "girlfriend"
+      ],
+      [
+       "suicide",
+       "killed himself",
+       "killed herself",
+       "took his own life",
+       "took her own life",
+       "hanged himself",
+       "overdosed"
+      ]
+     ]
+    ]
+   },
+   "宠物离世": {
+    "P": [
+     "lost my dog",
+     "my dog died",
+     "my cat died",
+     "put my dog down",
+     "狗去世",
+     "猫去世",
+     "宠物走了"
+    ],
+    "C": [
+     [
+      [
+       "dog",
+       "cat",
+       "pet"
+      ],
+      [
+       "died",
+       "passed away",
+       "funeral",
+       "buried",
+       "death of",
+       "killed himself",
+       "killed herself",
+       "put down",
+       "euthanized"
+      ]
+     ]
+    ]
+   },
+   "丧母": {
+    "P": [
+     "lost my mom",
+     "lost my mother",
+     "my mom died",
+     "my mother died",
+     "mom passed away",
+     "mother passed away",
+     "妈妈去世",
+     "母亲过世"
+    ],
+    "C": [
+     [
+      [
+       "mom",
+       "mother",
+       "mum",
+       "mama"
+      ],
+      [
+       "died",
+       "passed away",
+       "funeral",
+       "buried",
+       "death of",
+       "killed himself",
+       "killed herself"
+      ]
+     ]
+    ]
+   },
+   "丧父": {
+    "P": [
+     "lost my dad",
+     "lost my father",
+     "my dad died",
+     "my father died",
+     "dad passed away",
+     "father passed away",
+     "爸爸去世",
+     "父亲过世"
+    ],
+    "C": [
+     [
+      [
+       "dad",
+       "father",
+       "papa"
+      ],
+      [
+       "died",
+       "passed away",
+       "funeral",
+       "buried",
+       "death of",
+       "killed himself",
+       "killed herself"
+      ]
+     ]
+    ]
+   },
+   "丧兄弟姐妹": {
+    "P": [
+     "lost my brother",
+     "lost my sister",
+     "my brother died",
+     "my sister died"
+    ],
+    "C": [
+     [
+      [
+       "brother",
+       "sister"
+      ],
+      [
+       "died",
+       "passed away",
+       "funeral",
+       "buried",
+       "death of",
+       "killed himself",
+       "killed herself"
+      ]
+     ]
+    ]
+   },
+   "丧祖辈": {
+    "P": [
+     "lost my grandma",
+     "lost my grandpa",
+     "grandma died",
+     "grandpa died",
+     "grandmother died",
+     "grandfather died"
+    ],
+    "C": [
+     [
+      [
+       "grandma",
+       "grandpa",
+       "grandmother",
+       "grandfather",
+       "nana"
+      ],
+      [
+       "died",
+       "passed away",
+       "funeral",
+       "buried",
+       "death of",
+       "killed himself",
+       "killed herself"
+      ]
+     ]
+    ]
+   }
+  },
+  "经济窘迫(严)": {
+   "债务": {
+    "P": [
+     "in debt",
+     "credit card debt",
+     "student loan debt",
+     "owe money",
+     "欠债",
+     "网贷",
+     "负债",
+     "信用卡欠"
+    ],
+    "C": []
+   },
+   "房租/住房/房贷": {
+    "P": [
+     "can't pay rent",
+     "cannot pay rent",
+     "eviction",
+     "evicted",
+     "homeless",
+     "mortgage",
+     "交不起房租",
+     "房贷",
+     "无家可归",
+     "被房东赶",
+     "pay rent",
+     "paying rent",
+     "rent is",
+     "rent due",
+     "behind on rent",
+     "can't pay my rent",
+     "cannot pay my rent"
+    ],
+    "C": [
+     [
+      [
+       "rent",
+       "landlord",
+       "apartment",
+       "mortgage",
+       "eviction"
+      ],
+      [
+       "can't pay",
+       "cannot pay",
+       "couldn't pay",
+       "behind",
+       "due",
+       "raised",
+       "evicted",
+       "kicked out"
+      ]
+     ]
+    ]
+   },
+   "没收入/失业断粮": {
+    "P": [
+     "no income",
+     "no money at all",
+     "can't afford food",
+     "food bank",
+     "food stamps",
+     "没收入",
+     "没钱吃饭",
+     "断粮",
+     "no job",
+     "no savings",
+     "broke",
+     "bank account is empty",
+     "overdraft"
+    ],
+    "C": [
+     [
+      [
+       "no money",
+       "no income",
+       "no savings",
+       "broke"
+      ],
+      [
+       "food",
+       "eat",
+       "rent",
+       "bills",
+       "starving"
+      ]
+     ]
+    ]
+   },
+   "看不起病/药费": {
+    "P": [
+     "can't afford therapy",
+     "cannot afford therapy",
+     "can't afford my medication",
+     "can't afford medication",
+     "medical bills",
+     "看不起病",
+     "买不起药",
+     "药费"
+    ],
+    "C": [
+     [
+      [
+       "afford"
+      ],
+      [
+       "therapy",
+       "therapist",
+       "medication",
+       "meds",
+       "doctor",
+       "treatment",
+       "insurance",
+       "hospital"
+      ]
+     ]
+    ]
+   },
+   "低薪贫困": {
+    "P": [
+     "minimum wage",
+     "low pay",
+     "poor family",
+     "grew up poor",
+     "工资低",
+     "家里穷",
+     "穷人"
+    ],
+    "C": []
+   },
+   "债务(非学贷)": {
+    "P": [
+     "in debt",
+     "credit card debt",
+     "credit cards debt",
+     "card debt",
+     "owe money",
+     "owe $",
+     "debt collectors",
+     "bankruptcy",
+     "欠债",
+     "网贷",
+     "负债"
+    ],
+    "C": [
+     [
+      [
+       "debt",
+       "owe",
+       "loans"
+      ],
+      [
+       "credit card",
+       "collectors",
+       "bankrupt",
+       "payments",
+       "paying off"
+      ]
+     ]
+    ]
+   },
+   "学生贷款": {
+    "P": [
+     "student loan",
+     "student loans",
+     "student debt",
+     "sallie mae",
+     "navient",
+     "学贷"
+    ],
+    "C": []
+   },
+   "账单/生活费": {
+    "P": [
+     "pay bills",
+     "paying bills",
+     "can't pay my bills",
+     "utility bills",
+     "electric bill",
+     "phone bill",
+     "水电费",
+     "生活费"
+    ],
+    "C": [
+     [
+      [
+       "bills",
+       "utilities"
+      ],
+      [
+       "can't pay",
+       "cannot pay",
+       "behind",
+       "piling up",
+       "overdue"
+      ]
+     ]
+    ]
+   }
+  },
+  "困住/逃不掉": {
+   "照顾责任走不开": {
+    "P": [
+     "can't leave because of my kids",
+     "have to take care of",
+     "can't leave my mom",
+     "can't leave my dad",
+     "走不开",
+     "要照顾",
+     "孩子还小"
+    ],
+    "C": []
+   },
+   "经济上走不开": {
+    "P": [
+     "can't afford to leave",
+     "can't afford to quit",
+     "financially trapped",
+     "辞不起",
+     "离不开这份工",
+     "没积蓄"
+    ],
+    "C": [
+     [
+      [
+       "can't leave",
+       "can't quit",
+       "cannot leave",
+       "cannot quit"
+      ],
+      [
+       "money",
+       "afford",
+       "bills",
+       "rent",
+       "debt"
+      ]
+     ]
+    ]
+   },
+   "关系里走不开": {
+    "P": [
+     "can't leave him",
+     "can't leave her",
+     "trapped in this marriage",
+     "trapped in a relationship",
+     "离不开他",
+     "离不开她",
+     "婚姻困住"
+    ],
+    "C": []
+   },
+   "困在工作": {
+    "P": [
+     "trapped in my job",
+     "stuck in my job",
+     "stuck at my job",
+     "can't quit my job",
+     "hate my job but"
+    ],
+    "C": [
+     [
+      [
+       "trapped",
+       "stuck"
+      ],
+      [
+       "job",
+       "work",
+       "career"
+      ]
+     ]
+    ]
+   },
+   "困在关系/婚姻": {
+    "P": [
+     "can't leave him",
+     "can't leave her",
+     "trapped in this marriage",
+     "trapped in a relationship",
+     "离不开他",
+     "离不开她",
+     "婚姻困住",
+     "stuck in my marriage",
+     "stuck in this relationship",
+     "trapped in my marriage"
+    ],
+    "C": [
+     [
+      [
+       "trapped",
+       "stuck"
+      ],
+      [
+       "marriage",
+       "relationship",
+       "boyfriend",
+       "girlfriend",
+       "husband",
+       "wife"
+      ]
+     ]
+    ]
+   },
+   "困在照顾责任": {
+    "P": [
+     "can't leave because of my kids",
+     "have to take care of",
+     "can't leave my mom",
+     "can't leave my dad",
+     "走不开",
+     "要照顾",
+     "孩子还小"
+    ],
+    "C": [
+     [
+      [
+       "trapped",
+       "stuck",
+       "can't leave"
+      ],
+      [
+       "kids",
+       "children",
+       "my mom",
+       "my dad",
+       "my mother",
+       "my father",
+       "care for",
+       "taking care"
+      ]
+     ]
+    ]
+   },
+   "困在住处/小镇": {
+    "P": [
+     "stuck in this town",
+     "trapped in this house",
+     "stuck living with",
+     "can't move out",
+     "stuck at home"
+    ],
+    "C": [
+     [
+      [
+       "trapped",
+       "stuck"
+      ],
+      [
+       "town",
+       "city",
+       "house",
+       "home",
+       "parents' house",
+       "living with my parents"
+      ]
+     ]
+    ]
+   },
+   "困在身体/疾病": {
+    "P": [
+     "trapped in my body",
+     "stuck in bed",
+     "trapped inside my mind"
+    ],
+    "C": [
+     [
+      [
+       "trapped",
+       "stuck"
+      ],
+      [
+       "body",
+       "pain",
+       "illness",
+       "bed",
+       "mind",
+       "head"
+      ]
+     ]
+    ]
+   }
+  },
+  "遗传/家族史": {
+   "家族多人有病": {
+    "P": [
+     "runs in my family",
+     "my mom has depression",
+     "my mother has depression",
+     "my dad has depression",
+     "family history of depression",
+     "妈妈也有抑郁症",
+     "家族里",
+     "遗传的"
+    ],
+    "C": []
+   },
+   "基因/检测提及": {
+    "P": [
+     "genetic",
+     "genes",
+     "23andme",
+     "gene test",
+     "基因",
+     "遗传因素"
+    ],
+    "C": []
+   }
+  },
+  "无缘无故": {
+   "什么都有却抑郁": {
+    "P": [
+     "i have everything",
+     "good life but",
+     "great life but",
+     "no reason to be depressed",
+     "should be happy",
+     "什么都有",
+     "条件很好却",
+     "不该抑郁"
+    ],
+    "C": []
+   },
+   "莫名发作": {
+    "P": [
+     "for no reason",
+     "no reason at all",
+     "out of nowhere",
+     "just feel sad",
+     "莫名其妙",
+     "没理由",
+     "突然就"
+    ],
+    "C": []
+   }
+  },
+  "睡眠": {
+   "入睡困难/失眠": {
+    "P": [
+     "insomnia",
+     "can't fall asleep",
+     "cannot fall asleep",
+     "trouble falling asleep",
+     "can't sleep",
+     "cannot sleep",
+     "sleepless",
+     "失眠",
+     "睡不着"
+    ],
+    "C": []
+   },
+   "睡眠时间不足": {
+    "P": [
+     "hours of sleep",
+     "hours sleep",
+     "barely sleep",
+     "sleep deprivation",
+     "sleep deprived",
+     "no sleep",
+     "睡眠不足"
+    ],
+    "C": []
+   },
+   "作息紊乱/夜班": {
+    "P": [
+     "sleep schedule",
+     "night shift",
+     "sleep cycle",
+     "circadian",
+     "sleep pattern",
+     "夜班",
+     "日夜颠倒"
+    ],
+    "C": []
+   },
+   "药物助眠/药物影响": {
+    "P": [
+     "sleeping pills",
+     "sleep aids",
+     "melatonin",
+     "安眠药",
+     "助眠"
+    ],
+    "C": []
+   },
+   "噩梦": {
+    "P": [
+     "nightmares",
+     "night terrors",
+     "bad dreams",
+     "噩梦"
+    ],
+    "C": []
+   }
+  },
+  "产后": {
+   "产后抑郁(自述)": {
+    "P": [
+     "postpartum depression",
+     "postnatal depression",
+     "ppd",
+     "产后抑郁"
+    ],
+    "C": []
+   },
+   "分娩后发病(时间)": {
+    "P": [
+     "after giving birth",
+     "after my baby was born",
+     "since giving birth",
+     "months postpartum",
+     "weeks postpartum",
+     "after childbirth",
+     "生完孩子"
+    ],
+    "C": []
+   },
+   "育儿压力/婴儿睡眠": {
+    "P": [
+     "baby won't sleep",
+     "newborn",
+     "breastfeeding",
+     "pumping",
+     "baby cries",
+     "带娃",
+     "喂奶",
+     "宝宝不睡"
+    ],
+    "C": []
+   }
+  }
+ }
+}
