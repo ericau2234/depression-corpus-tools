@@ -1,0 +1,9 @@
+data/
+data_clean/
+*.jsonl
+*.parquet
+*.log
+pylibs/
+__pycache__/
+*.done
+V22_DELIVERED.flag
