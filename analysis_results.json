@@ -1,0 +1,246 @@
+{
+ "reddit_posts": {
+  "n": 5098,
+  "any_theme_hit_pct": 70.7,
+  "themes": {
+   "work_school_stress": {
+    "count": 1904,
+    "pct": 37.3
+   },
+   "family_parents": {
+    "count": 1883,
+    "pct": 36.9
+   },
+   "loneliness_isolation": {
+    "count": 1031,
+    "pct": 20.2
+   },
+   "relationship": {
+    "count": 889,
+    "pct": 17.4
+   },
+   "physical_illness_pain": {
+    "count": 856,
+    "pct": 16.8
+   },
+   "childhood_trauma_abuse": {
+    "count": 564,
+    "pct": 11.1
+   },
+   "sleep": {
+    "count": 555,
+    "pct": 10.9
+   },
+   "self_blame_personality": {
+    "count": 536,
+    "pct": 10.5
+   },
+   "jobloss_money": {
+    "count": 529,
+    "pct": 10.4
+   },
+   "brain_chemical": {
+    "count": 389,
+    "pct": 7.6
+   },
+   "grief_loss": {
+    "count": 383,
+    "pct": 7.5
+   },
+   "substance": {
+    "count": 353,
+    "pct": 6.9
+   },
+   "no_reason_confusion": {
+    "count": 171,
+    "pct": 3.4
+   },
+   "covid": {
+    "count": 49,
+    "pct": 1.0
+   },
+   "genetics_family_history": {
+    "count": 20,
+    "pct": 0.4
+   }
+  }
+ },
+ "reddit_meta": {
+  "total_posts": 5098,
+  "with_selftext_len>=200": 3931,
+  "subreddits": {
+   "mentalhealth": 2598,
+   "depression": 2500
+  }
+ },
+ "bilibili_videos": {
+  "n": 1241,
+  "any_theme_hit_pct": 29.7,
+  "themes": {
+   "原生家庭_父母": {
+    "count": 192,
+    "pct": 15.5
+   },
+   "药物_治疗": {
+    "count": 88,
+    "pct": 7.1
+   },
+   "孤独": {
+    "count": 40,
+    "pct": 3.2
+   },
+   "童年_创伤": {
+    "count": 40,
+    "pct": 3.2
+   },
+   "学业_工作压力": {
+    "count": 33,
+    "pct": 2.7
+   },
+   "睡眠": {
+    "count": 26,
+    "pct": 2.1
+   },
+   "恋爱_婚姻": {
+    "count": 14,
+    "pct": 1.1
+   },
+   "遗传": {
+    "count": 7,
+    "pct": 0.6
+   },
+   "无明确原因_困惑": {
+    "count": 7,
+    "pct": 0.6
+   },
+   "身体疾病_疼痛": {
+    "count": 7,
+    "pct": 0.6
+   },
+   "经济": {
+    "count": 4,
+    "pct": 0.3
+   }
+  }
+ },
+ "bilibili_videos_meta": {
+  "total": 1241,
+  "by_keyword": {
+   "抑郁症": 207,
+   "抑郁症自述": 130,
+   "为什么会得抑郁症": 160,
+   "抑郁症的原因": 89,
+   "原生家庭 抑郁": 175,
+   "抑郁症经历": 68,
+   "走出抑郁症": 111,
+   "抑郁 发病原因": 96,
+   "抑郁症 陪伴": 84,
+   "重度抑郁": 121
+  },
+  "total_play": 407003048
+ },
+ "bilibili_comments": {
+  "n": 180,
+  "any_theme_hit_pct": 28.3,
+  "themes": {
+   "原生家庭_父母": {
+    "count": 23,
+    "pct": 12.8
+   },
+   "药物_治疗": {
+    "count": 15,
+    "pct": 8.3
+   },
+   "孤独": {
+    "count": 10,
+    "pct": 5.6
+   },
+   "恋爱_婚姻": {
+    "count": 7,
+    "pct": 3.9
+   },
+   "学业_工作压力": {
+    "count": 7,
+    "pct": 3.9
+   },
+   "睡眠": {
+    "count": 7,
+    "pct": 3.9
+   },
+   "经济": {
+    "count": 3,
+    "pct": 1.7
+   },
+   "无明确原因_困惑": {
+    "count": 3,
+    "pct": 1.7
+   },
+   "身体疾病_疼痛": {
+    "count": 3,
+    "pct": 1.7
+   },
+   "童年_创伤": {
+    "count": 2,
+    "pct": 1.1
+   },
+   "遗传": {
+    "count": 1,
+    "pct": 0.6
+   }
+  }
+ },
+ "bilibili_danmaku": {
+  "n": 146070,
+  "any_theme_hit_pct": 6.6,
+  "themes": {
+   "原生家庭_父母": {
+    "count": 4398,
+    "pct": 3.0
+   },
+   "药物_治疗": {
+    "count": 1504,
+    "pct": 1.0
+   },
+   "学业_工作压力": {
+    "count": 1256,
+    "pct": 0.9
+   },
+   "孤独": {
+    "count": 723,
+    "pct": 0.5
+   },
+   "睡眠": {
+    "count": 582,
+    "pct": 0.4
+   },
+   "恋爱_婚姻": {
+    "count": 516,
+    "pct": 0.4
+   },
+   "童年_创伤": {
+    "count": 402,
+    "pct": 0.3
+   },
+   "经济": {
+    "count": 287,
+    "pct": 0.2
+   },
+   "无明确原因_困惑": {
+    "count": 247,
+    "pct": 0.2
+   },
+   "身体疾病_疼痛": {
+    "count": 187,
+    "pct": 0.1
+   },
+   "遗传": {
+    "count": 120,
+    "pct": 0.1
+   }
+  }
+ },
+ "bilibili_danmaku_meta": {
+  "total": 146070,
+  "unique_texts": 105661
+ }
+}

@@ -1,0 +1,830 @@
+{
+ "reddit_all": {
+  "n": 102635,
+  "any_theme_hit_pct": 69.8,
+  "themes": {
+   "work_school_stress": {
+    "count": 33673,
+    "pct": 32.8
+   },
+   "family_parents": {
+    "count": 31998,
+    "pct": 31.2
+   },
+   "loneliness_isolation": {
+    "count": 18551,
+    "pct": 18.1
+   },
+   "relationship": {
+    "count": 16557,
+    "pct": 16.1
+   },
+   "physical_illness_pain": {
+    "count": 15600,
+    "pct": 15.2
+   },
+   "sleep": {
+    "count": 15389,
+    "pct": 15.0
+   },
+   "childhood_trauma_abuse": {
+    "count": 13534,
+    "pct": 13.2
+   },
+   "grief_loss": {
+    "count": 9062,
+    "pct": 8.8
+   },
+   "jobloss_money": {
+    "count": 7367,
+    "pct": 7.2
+   },
+   "brain_chemical": {
+    "count": 7300,
+    "pct": 7.1
+   },
+   "self_blame_personality": {
+    "count": 7283,
+    "pct": 7.1
+   },
+   "substance": {
+    "count": 6328,
+    "pct": 6.2
+   },
+   "no_reason_confusion": {
+    "count": 2569,
+    "pct": 2.5
+   },
+   "covid": {
+    "count": 947,
+    "pct": 0.9
+   },
+   "genetics_family_history": {
+    "count": 396,
+    "pct": 0.4
+   }
+  }
+ },
+ "reddit_core_subs": {
+  "n": 40031,
+  "any_theme_hit_pct": 68.5,
+  "themes": {
+   "work_school_stress": {
+    "count": 13935,
+    "pct": 34.8
+   },
+   "family_parents": {
+    "count": 13392,
+    "pct": 33.5
+   },
+   "loneliness_isolation": {
+    "count": 7246,
+    "pct": 18.1
+   },
+   "relationship": {
+    "count": 6564,
+    "pct": 16.4
+   },
+   "physical_illness_pain": {
+    "count": 6084,
+    "pct": 15.2
+   },
+   "sleep": {
+    "count": 4338,
+    "pct": 10.8
+   },
+   "childhood_trauma_abuse": {
+    "count": 4288,
+    "pct": 10.7
+   },
+   "self_blame_personality": {
+    "count": 3900,
+    "pct": 9.7
+   },
+   "jobloss_money": {
+    "count": 3861,
+    "pct": 9.6
+   },
+   "brain_chemical": {
+    "count": 2569,
+    "pct": 6.4
+   },
+   "grief_loss": {
+    "count": 2511,
+    "pct": 6.3
+   },
+   "substance": {
+    "count": 2486,
+    "pct": 6.2
+   },
+   "no_reason_confusion": {
+    "count": 1234,
+    "pct": 3.1
+   },
+   "covid": {
+    "count": 393,
+    "pct": 1.0
+   },
+   "genetics_family_history": {
+    "count": 175,
+    "pct": 0.4
+   }
+  }
+ },
+ "reddit_adjacent_subs": {
+  "n": 62604,
+  "any_theme_hit_pct": 70.6,
+  "themes": {
+   "work_school_stress": {
+    "count": 19738,
+    "pct": 31.5
+   },
+   "family_parents": {
+    "count": 18606,
+    "pct": 29.7
+   },
+   "loneliness_isolation": {
+    "count": 11305,
+    "pct": 18.1
+   },
+   "sleep": {
+    "count": 11051,
+    "pct": 17.7
+   },
+   "relationship": {
+    "count": 9993,
+    "pct": 16.0
+   },
+   "physical_illness_pain": {
+    "count": 9516,
+    "pct": 15.2
+   },
+   "childhood_trauma_abuse": {
+    "count": 9246,
+    "pct": 14.8
+   },
+   "grief_loss": {
+    "count": 6551,
+    "pct": 10.5
+   },
+   "brain_chemical": {
+    "count": 4731,
+    "pct": 7.6
+   },
+   "substance": {
+    "count": 3842,
+    "pct": 6.1
+   },
+   "jobloss_money": {
+    "count": 3506,
+    "pct": 5.6
+   },
+   "self_blame_personality": {
+    "count": 3383,
+    "pct": 5.4
+   },
+   "no_reason_confusion": {
+    "count": 1335,
+    "pct": 2.1
+   },
+   "covid": {
+    "count": 554,
+    "pct": 0.9
+   },
+   "genetics_family_history": {
+    "count": 221,
+    "pct": 0.4
+   }
+  }
+ },
+ "reddit_meta": {
+  "total": 102635,
+  "core": 40031,
+  "adjacent": 62604,
+  "by_subreddit": {
+   "mentalhealth": 17202,
+   "depression": 17083,
+   "depression_help": 5746,
+   "anxiety": 5883,
+   "socialanxiety": 7606,
+   "insomnia": 5919,
+   "ptsd": 5918,
+   "MentalHealthSupport": 5688,
+   "BPD": 3860,
+   "Anxietyhelp": 3630,
+   "lonely": 7567,
+   "GriefSupport": 5906,
+   "CPTSD": 5829,
+   "bipolar": 4798
+  },
+  "selftext_ge200": 74434
+ },
+ "patient": {
+  "n": 2066,
+  "any_theme_hit_pct": 58.1,
+  "themes": {
+   "work_school_stress": {
+    "count": 540,
+    "pct": 26.1
+   },
+   "relationship": {
+    "count": 328,
+    "pct": 15.9
+   },
+   "family_parents": {
+    "count": 284,
+    "pct": 13.7
+   },
+   "sleep": {
+    "count": 237,
+    "pct": 11.5
+   },
+   "physical_illness_pain": {
+    "count": 227,
+    "pct": 11.0
+   },
+   "loneliness_isolation": {
+    "count": 158,
+    "pct": 7.6
+   },
+   "substance": {
+    "count": 149,
+    "pct": 7.2
+   },
+   "brain_chemical": {
+    "count": 136,
+    "pct": 6.6
+   },
+   "self_blame_personality": {
+    "count": 65,
+    "pct": 3.1
+   },
+   "covid": {
+    "count": 62,
+    "pct": 3.0
+   },
+   "childhood_trauma_abuse": {
+    "count": 50,
+    "pct": 2.4
+   },
+   "jobloss_money": {
+    "count": 46,
+    "pct": 2.2
+   },
+   "grief_loss": {
+    "count": 46,
+    "pct": 2.2
+   },
+   "no_reason_confusion": {
+    "count": 21,
+    "pct": 1.0
+   },
+   "genetics_family_history": {
+    "count": 8,
+    "pct": 0.4
+   }
+  }
+ },
+ "lemmy": {
+  "n": 1151,
+  "any_theme_hit_pct": 32.1,
+  "themes": {
+   "work_school_stress": {
+    "count": 166,
+    "pct": 14.4
+   },
+   "family_parents": {
+    "count": 154,
+    "pct": 13.4
+   },
+   "physical_illness_pain": {
+    "count": 78,
+    "pct": 6.8
+   },
+   "relationship": {
+    "count": 71,
+    "pct": 6.2
+   },
+   "childhood_trauma_abuse": {
+    "count": 62,
+    "pct": 5.4
+   },
+   "loneliness_isolation": {
+    "count": 60,
+    "pct": 5.2
+   },
+   "sleep": {
+    "count": 55,
+    "pct": 4.8
+   },
+   "brain_chemical": {
+    "count": 51,
+    "pct": 4.4
+   },
+   "jobloss_money": {
+    "count": 50,
+    "pct": 4.3
+   },
+   "self_blame_personality": {
+    "count": 36,
+    "pct": 3.1
+   },
+   "substance": {
+    "count": 36,
+    "pct": 3.1
+   },
+   "grief_loss": {
+    "count": 26,
+    "pct": 2.3
+   },
+   "no_reason_confusion": {
+    "count": 5,
+    "pct": 0.4
+   },
+   "genetics_family_history": {
+    "count": 4,
+    "pct": 0.3
+   },
+   "covid": {
+    "count": 1,
+    "pct": 0.1
+   }
+  }
+ },
+ "mastodon_en": {
+  "n": 4705,
+  "any_theme_hit_pct": 58.0,
+  "themes": {
+   "work_school_stress": {
+    "count": 1331,
+    "pct": 28.3
+   },
+   "physical_illness_pain": {
+    "count": 619,
+    "pct": 13.2
+   },
+   "family_parents": {
+    "count": 555,
+    "pct": 11.8
+   },
+   "childhood_trauma_abuse": {
+    "count": 420,
+    "pct": 8.9
+   },
+   "loneliness_isolation": {
+    "count": 302,
+    "pct": 6.4
+   },
+   "brain_chemical": {
+    "count": 287,
+    "pct": 6.1
+   },
+   "substance": {
+    "count": 197,
+    "pct": 4.2
+   },
+   "relationship": {
+    "count": 190,
+    "pct": 4.0
+   },
+   "sleep": {
+    "count": 170,
+    "pct": 3.6
+   },
+   "jobloss_money": {
+    "count": 143,
+    "pct": 3.0
+   },
+   "grief_loss": {
+    "count": 113,
+    "pct": 2.4
+   },
+   "self_blame_personality": {
+    "count": 112,
+    "pct": 2.4
+   },
+   "covid": {
+    "count": 40,
+    "pct": 0.9
+   },
+   "genetics_family_history": {
+    "count": 24,
+    "pct": 0.5
+   },
+   "no_reason_confusion": {
+    "count": 6,
+    "pct": 0.1
+   }
+  }
+ },
+ "mastodon_meta": {
+  "total": 6078,
+  "en": 4705,
+  "langs": [
+   [
+    "en",
+    4705
+   ],
+   [
+    "de",
+    404
+   ],
+   [
+    "es",
+    368
+   ],
+   [
+    "other",
+    209
+   ],
+   [
+    "pt",
+    139
+   ],
+   [
+    "fr",
+    74
+   ],
+   [
+    "ja",
+    44
+   ],
+   [
+    "ru",
+    20
+   ],
+   [
+    "nl",
+    20
+   ],
+   [
+    "it",
+    16
+   ],
+   [
+    "sv",
+    13
+   ],
+   [
+    "ar",
+    10
+   ]
+  ]
+ },
+ "youtube_en": {
+  "n": 21691,
+  "any_theme_hit_pct": 27.2,
+  "themes": {
+   "family_parents": {
+    "count": 2300,
+    "pct": 10.6
+   },
+   "work_school_stress": {
+    "count": 1615,
+    "pct": 7.4
+   },
+   "physical_illness_pain": {
+    "count": 1018,
+    "pct": 4.7
+   },
+   "childhood_trauma_abuse": {
+    "count": 728,
+    "pct": 3.4
+   },
+   "loneliness_isolation": {
+    "count": 578,
+    "pct": 2.7
+   },
+   "relationship": {
+    "count": 530,
+    "pct": 2.4
+   },
+   "self_blame_personality": {
+    "count": 379,
+    "pct": 1.7
+   },
+   "sleep": {
+    "count": 334,
+    "pct": 1.5
+   },
+   "brain_chemical": {
+    "count": 275,
+    "pct": 1.3
+   },
+   "substance": {
+    "count": 201,
+    "pct": 0.9
+   },
+   "jobloss_money": {
+    "count": 195,
+    "pct": 0.9
+   },
+   "grief_loss": {
+    "count": 180,
+    "pct": 0.8
+   },
+   "covid": {
+    "count": 52,
+    "pct": 0.2
+   },
+   "no_reason_confusion": {
+    "count": 37,
+    "pct": 0.2
+   },
+   "genetics_family_history": {
+    "count": 24,
+    "pct": 0.1
+   }
+  }
+ },
+ "youtube_zh": {
+  "n": 5024,
+  "any_theme_hit_pct": 19.4,
+  "themes": {
+   "药物_治疗": {
+    "count": 297,
+    "pct": 5.9
+   },
+   "原生家庭_父母": {
+    "count": 275,
+    "pct": 5.5
+   },
+   "睡眠": {
+    "count": 268,
+    "pct": 5.3
+   },
+   "恋爱_婚姻": {
+    "count": 201,
+    "pct": 4.0
+   },
+   "学业_工作压力": {
+    "count": 96,
+    "pct": 1.9
+   },
+   "遗传": {
+    "count": 48,
+    "pct": 1.0
+   },
+   "身体疾病_疼痛": {
+    "count": 47,
+    "pct": 0.9
+   },
+   "童年_创伤": {
+    "count": 40,
+    "pct": 0.8
+   },
+   "孤独": {
+    "count": 39,
+    "pct": 0.8
+   },
+   "无明确原因_困惑": {
+    "count": 16,
+    "pct": 0.3
+   },
+   "经济": {
+    "count": 6,
+    "pct": 0.1
+   }
+  }
+ },
+ "youtube_meta": {
+  "total": 26715,
+  "en_like": 21691,
+  "zh": 5024
+ },
+ "bilibili_videos": {
+  "n": 3114,
+  "any_theme_hit_pct": 35.2,
+  "themes": {
+   "原生家庭_父母": {
+    "count": 362,
+    "pct": 11.6
+   },
+   "药物_治疗": {
+    "count": 356,
+    "pct": 11.4
+   },
+   "睡眠": {
+    "count": 220,
+    "pct": 7.1
+   },
+   "学业_工作压力": {
+    "count": 133,
+    "pct": 4.3
+   },
+   "孤独": {
+    "count": 68,
+    "pct": 2.2
+   },
+   "童年_创伤": {
+    "count": 68,
+    "pct": 2.2
+   },
+   "恋爱_婚姻": {
+    "count": 55,
+    "pct": 1.8
+   },
+   "身体疾病_疼痛": {
+    "count": 28,
+    "pct": 0.9
+   },
+   "遗传": {
+    "count": 13,
+    "pct": 0.4
+   },
+   "无明确原因_困惑": {
+    "count": 13,
+    "pct": 0.4
+   },
+   "经济": {
+    "count": 11,
+    "pct": 0.4
+   }
+  }
+ },
+ "bilibili_articles": {
+  "n": 4369,
+  "any_theme_hit_pct": 74.6,
+  "themes": {
+   "药物_治疗": {
+    "count": 1417,
+    "pct": 32.4
+   },
+   "原生家庭_父母": {
+    "count": 1124,
+    "pct": 25.7
+   },
+   "睡眠": {
+    "count": 877,
+    "pct": 20.1
+   },
+   "学业_工作压力": {
+    "count": 834,
+    "pct": 19.1
+   },
+   "孤独": {
+    "count": 367,
+    "pct": 8.4
+   },
+   "身体疾病_疼痛": {
+    "count": 250,
+    "pct": 5.7
+   },
+   "恋爱_婚姻": {
+    "count": 189,
+    "pct": 4.3
+   },
+   "童年_创伤": {
+    "count": 182,
+    "pct": 4.2
+   },
+   "遗传": {
+    "count": 167,
+    "pct": 3.8
+   },
+   "无明确原因_困惑": {
+    "count": 80,
+    "pct": 1.8
+   },
+   "经济": {
+    "count": 45,
+    "pct": 1.0
+   }
+  }
+ },
+ "bilibili_meta": {
+  "videos": 3114,
+  "articles": 4369,
+  "article_desc_ge100": 4165
+ },
+ "hf_oesd_zh": {
+  "n": 79517,
+  "any_theme_hit_pct": 91.7,
+  "themes": {
+   "孤独": {
+    "count": 60896,
+    "pct": 76.6
+   },
+   "学业_工作压力": {
+    "count": 28221,
+    "pct": 35.5
+   },
+   "原生家庭_父母": {
+    "count": 23382,
+    "pct": 29.4
+   },
+   "睡眠": {
+    "count": 4165,
+    "pct": 5.2
+   },
+   "恋爱_婚姻": {
+    "count": 4082,
+    "pct": 5.1
+   },
+   "药物_治疗": {
+    "count": 4024,
+    "pct": 5.1
+   },
+   "童年_创伤": {
+    "count": 1349,
+    "pct": 1.7
+   },
+   "经济": {
+    "count": 981,
+    "pct": 1.2
+   },
+   "身体疾病_疼痛": {
+    "count": 556,
+    "pct": 0.7
+   },
+   "遗传": {
+    "count": 122,
+    "pct": 0.2
+   },
+   "无明确原因_困惑": {
+    "count": 103,
+    "pct": 0.1
+   }
+  }
+ },
+ "hf_english_sets": {
+  "n": 41784,
+  "any_theme_hit_pct": 47.6,
+  "themes": {
+   "family_parents": {
+    "count": 8896,
+    "pct": 21.3
+   },
+   "work_school_stress": {
+    "count": 8702,
+    "pct": 20.8
+   },
+   "physical_illness_pain": {
+    "count": 4575,
+    "pct": 10.9
+   },
+   "relationship": {
+    "count": 3989,
+    "pct": 9.5
+   },
+   "loneliness_isolation": {
+    "count": 3472,
+    "pct": 8.3
+   },
+   "sleep": {
+    "count": 2756,
+    "pct": 6.6
+   },
+   "jobloss_money": {
+    "count": 2226,
+    "pct": 5.3
+   },
+   "self_blame_personality": {
+    "count": 2011,
+    "pct": 4.8
+   },
+   "childhood_trauma_abuse": {
+    "count": 1754,
+    "pct": 4.2
+   },
+   "substance": {
+    "count": 1678,
+    "pct": 4.0
+   },
+   "grief_loss": {
+    "count": 1064,
+    "pct": 2.5
+   },
+   "brain_chemical": {
+    "count": 1026,
+    "pct": 2.5
+   },
+   "covid": {
+    "count": 576,
+    "pct": 1.4
+   },
+   "no_reason_confusion": {
+    "count": 143,
+    "pct": 0.3
+   },
+   "genetics_family_history": {
+    "count": 96,
+    "pct": 0.2
+   }
+  }
+ },
+ "hf_meta": {
+  "total": 121301,
+  "oesd": 79517,
+  "english_sets": 41784,
+  "by_dataset": {
+   "ShreyaR/DepressionDetection": 7631,
+   "depression-icu/OESD-GG-zh_cn-1": 79517,
+   "joangaes/depression": 27937,
+   "ziq/depression_tweet": 6216
+  }
+ },
+ "hilferuf_meta": {
+  "total": 0
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "baseline_rows": 7341,
+ "patient2": {
+  "raw_lines": 261230,
+  "generic_kept": 261230,
+  "drop_short_or_bad": 0,
+  "drop_id_dup": 7340,
+  "drop_text_dup": 1425,
+  "new_kept": 252465
+ },
+ "merged_total": 259806,
+ "wave1_raw_posts_via_cc_patient": 2078,
+ "wave1_raw_textually_present_in_merged": 2036
+}

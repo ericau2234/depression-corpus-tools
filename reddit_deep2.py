@@ -34,7 +34,7 @@ def fetch(url, params, tries=4):
             print("http", r.status_code, flush=True)
         except Exception as e:
             print("net retry", a, type(e).__name__, flush=True)
-        time.sleep(5 * (a + 1))
+        time.sleep(2 * (a + 1))
     return []
 
 def run_task(mode, sub, year):
@@ -67,7 +67,7 @@ def run_task(mode, sub, year):
             if not rows:
                 # throttle-empty vs true exhaustion: confirm with slow retries
                 for _ in range(3):
-                    time.sleep(30)
+                    time.sleep(10)
                     rows = fetch(url, params)
                     if rows: break
                 if not rows:
@@ -94,7 +94,7 @@ def run_task(mode, sub, year):
                 print(tag, "page", page, "total", total, flush=True)
             if len(rows) < 100:
                 break
-            time.sleep(0.5)
+            time.sleep(0.1)
     with open(done_path, "w") as f:
         f.write(str(total))
     print("TASK DONE", tag, total, flush=True)

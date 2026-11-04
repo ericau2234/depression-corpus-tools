@@ -10,8 +10,8 @@ alive() { pgrep -f "$1" >/dev/null 2>&1; }
 # --- Reddit deep trawl: complete at 500 window .done files ---
 n_done=$(ls data/deep2/*.done 2>/dev/null | wc -l)
 if [ "$n_done" -lt 500 ] && ! alive "reddit_deep2.py"; then
-  for i in 0 1 2 3 4 5 6 7 8 9; do
-    nohup python3 reddit_deep2.py $i 10 >> deep2_$i.log 2>&1 &
+  for i in $(seq 0 19); do
+    nohup python3 reddit_deep2.py $i 20 >> deep2_$i.log 2>&1 &
   done
   echo "$(date '+%F %T') relaunched deep2 (windows done: $n_done/500)" >> $LOG
 fi

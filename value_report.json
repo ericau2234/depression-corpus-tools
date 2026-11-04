@@ -1,0 +1,217 @@
+{
+ "report": {
+  "reddit": {
+   "stats": {
+    "n": 102635,
+    "median_chars": 606,
+    "pct_ge500": 55.6,
+    "pct_ge1000": 33.0,
+    "n_long": 74434
+   },
+   "per1000_long": {
+    "en_onset_narrative": 41.4,
+    "en_barriers": 44.6,
+    "en_sidefx_or_stopped": 30.9,
+    "en_it_helped": 24.8,
+    "en_medication": 34.3,
+    "en_therapy": 47.0,
+    "en_no_reason_onset": 34.4
+   }
+  },
+  "patient": {
+   "stats": {
+    "n": 2066,
+    "median_chars": 407,
+    "pct_ge500": 42.1,
+    "pct_ge1000": 17.0,
+    "n_long": 1534
+   },
+   "per1000_long": {
+    "en_onset_narrative": 14.3,
+    "en_barriers": 14.3,
+    "en_sidefx_or_stopped": 236.0,
+    "en_it_helped": 62.6,
+    "en_medication": 614.1,
+    "en_therapy": 87.4,
+    "en_no_reason_onset": 20.2
+   }
+  },
+  "bilibili_articles": {
+   "stats": {
+    "n": 4369,
+    "median_chars": 250,
+    "pct_ge500": 0.0,
+    "pct_ge1000": 0.0,
+    "n_long": 4006
+   },
+   "per1000_long": {
+    "zh_onset_narrative": 113.8,
+    "zh_barriers": 10.0,
+    "zh_sidefx_or_stopped": 60.9,
+    "zh_it_helped": 28.7,
+    "zh_medication": 4.0,
+    "zh_therapy": 110.6,
+    "zh_no_reason_onset": 19.5
+   }
+  },
+  "huggingface": {
+   "stats": {
+    "n": 121301,
+    "median_chars": 555,
+    "pct_ge500": 64.3,
+    "pct_ge1000": 3.3,
+    "n_long": 97962
+   },
+   "per1000_long": {
+    "en_onset_narrative": 3.8,
+    "en_barriers": 4.0,
+    "en_sidefx_or_stopped": 2.0,
+    "en_it_helped": 1.7,
+    "en_medication": 2.3,
+    "en_therapy": 2.8,
+    "en_no_reason_onset": 1.1,
+    "zh_onset_narrative": 0.6,
+    "zh_barriers": 5.6,
+    "zh_sidefx_or_stopped": 3.1,
+    "zh_it_helped": 3.9,
+    "zh_medication": 0.0,
+    "zh_therapy": 357.5,
+    "zh_no_reason_onset": 1.4
+   }
+  }
+ },
+ "samples": [
+  {
+   "platform": "reddit",
+   "chars": 2524,
+   "title": "I have been emotionless & numb ever since my fp left me months ago",
+   "excerpt": "I really hope everyone here has a good day. My ex girlfriend used to be my fp, we dated for a year and she was everything I had ever wanted. We never had any mild disagreements or anything even remotely similar until our relationship hit the three month mark, I became really paranoid (and I am also schizoaffective... really didn’t win the lottery) of her being unfaithful to me and even being my abusive & cheating ex "
+  },
+  {
+   "platform": "reddit",
+   "chars": 875,
+   "title": "i feel so withdrawn from everything",
+   "excerpt": "my relationship is just constant arguments, and we’re always bickering about something. it’s so exhausting. i love him, but it’s been ruining my mental health so much. yesterday we got into an argument, and he was just being so cruel to me, like i’ve never heard him be that way before. after, he said he just wanted to argue with me, and that honestly hurt my feelings so much. and in a way it feels like he just doesn’"
+  },
+  {
+   "platform": "reddit",
+   "chars": 1770,
+   "title": "Has anybody experienced a stressful period in their life and got ADHD brain afte",
+   "excerpt": "I went through a month of intense stress. There wasn't enough time to get things done and finish what I had to. I felt like if I just worked hard somehow like 18 hours a day I could get it done. So I kept blaming myself and also had the fear of being judged by everyone for not having finished that thing. During this month, felt paralysed to take any action because somewhere in the back of my mind I knew I couldn't fi"
+  },
+  {
+   "platform": "reddit",
+   "chars": 710,
+   "title": "Why am I forgetting?",
+   "excerpt": "I posted about this half a year ago and things haven’t improved My best friend went missing on vacation in Sri Lanka and his body has never been recovered As far as everyone knows, he’s dead Our mutual friends share stories about him all the time, and I can’t chime in because I can’t remember. It’s like my mind mental blocked him from my life. It makes me sick to my stomach that I can go from joint at the hip with so"
+  },
+  {
+   "platform": "reddit",
+   "chars": 1645,
+   "title": "I just need to rant",
+   "excerpt": "I've gone through so many things I don't even know where to start. I remember my narcissist grandmother (I had to live with her since my mom was 18 when she has me and I still do) would go crazy at me for no reason. Then eventually I would see my mom be beat, then I'd be spanked, with a belt or sandall, I don't remember it much I just remember it happened. I had my tongue flicked by my past step dad because I wouldn'"
+  },
+  {
+   "platform": "reddit",
+   "chars": 2677,
+   "title": "BPD - I think I’m crazy",
+   "excerpt": "I’m insane. I text my boyfriend constantly in whatever the hell kind of state I’m in. I’m not even really sure what’s happening in those moments. I don’t even realize it until after and just am filled with utter regret once I come back to semi reality. I just panic and fuck everything up. I think I’m actually having a mental break. Like I finally was shown how I really am, the mask I wear is a piece of shit and I hat"
+  },
+  {
+   "platform": "reddit",
+   "chars": 3297,
+   "title": "Im living a cycle. Need advice",
+   "excerpt": "I used to be living in the US and ive been living there since i was 6, now im 14. Recently my family went on a summer trip to where we are from, Kyrgyzstan. There was a moment where I couldnt even write my own name in the Kyrgyz language and i felt horrible embarrassed and thought about it. My dads been wanting me to go to a lyceum here in Kyrgyzstan for a while now (Basically a boarding school where u live there 5 d"
+  },
+  {
+   "platform": "reddit",
+   "chars": 944,
+   "title": "Still Here...Don't Know Why",
+   "excerpt": "In February, I tried to starve myself to death, I was literally just skin and bone, then I was diagnosed with anxiety, stress and severe depression in early March, I then tried to drown myself in my own bath and I even failed at this. In March I was rushed into hospital with severe chest pains and I thought I was having a heart attack, while I was here I was diagnosed with severe acid reflux (from trying to starve my"
+  },
+  {
+   "platform": "reddit",
+   "chars": 744,
+   "title": "We lost our soul dog yesterday.",
+   "excerpt": "We made the hardest decision yesterday to put down our soul dog. He's been with us for 10 years, our whole marriage. He's been through us through every single move, every child, every life event. It is so hard knowing if we made the right choice. My grief is telling me we could've done more but in pictures of his final moments you can see the light from his eyes gone. We had been battling GI and skin issues for a whi"
+  },
+  {
+   "platform": "reddit",
+   "chars": 563,
+   "title": "I know you feel the same",
+   "excerpt": "Each day drags on like an endless agony making redemption unreachable. My pain feels endless making me unable to comprehend or articulate my feelings. This is life. This is it. I know miracles happen but there won’t be any miracle able to change my fucked up mental health without 1. turning me into an addict; 2. fucking up my brain even more hence, in conclusion, making life worse than it already is. My birth was a m"
+  },
+  {
+   "platform": "patient",
+   "chars": 1382,
+   "title": "Am I falling out of love or just depressed?",
+   "excerpt": "Hi Amber! I feel exacy like you right now and its horrible i feel im going thru hell! I kno your post is from 7months ago... can you please please please tell me what you did to cope with the situation and got out of doubts on whether its the relation or the anxiety? I get anxious whenever I see him or see his name on my phone however i love him a lot and dont want to hurt him. We are both living together in a foreig"
+  },
+  {
+   "platform": "patient",
+   "chars": 652,
+   "title": "Started sertraline, anxiety through the roof",
+   "excerpt": "Hi all, thanks for taking the time to read this, I just wanted some friendly advice and to share my experience, I developed anxiety through covid and sleep deprivation, had a really bad time, was prescribed sertraline and took it for four days, I’ve never felt worse in my life, complete sense of dread and fear , total insomnia , negative thoughts , after taking myself to accident and emergency three times a doctor to"
+  },
+  {
+   "platform": "patient",
+   "chars": 885,
+   "title": "Depression is back",
+   "excerpt": "hi sadat, i am not surprised you are somewhat depressed! i think you have been through an awful ordeal, one ill parent is bad enough, but losing your dad is horrid - i really know what that feels like and my dad died 9 years back. take each event 1 at a time to try to take each day on its own. have you sought grief counselling? you need to to give some support to you personally! i had to. my dad was my absolute rock,"
+  },
+  {
+   "platform": "patient",
+   "chars": 582,
+   "title": "Citalopram blip",
+   "excerpt": "Hi im also on Citalopram and have been taking it for 3 years and going through the same thing. It’s never really worked 100% for me since I started on it but now I feel like it has stopped working altogether to the point iv have had to take time off work now but i know what your going through that feeling your never going to get better. I ues to take fluoxetine for about 10 year and never had any problems juat the us"
+  },
+  {
+   "platform": "huggingface",
+   "chars": 788,
+   "title": "",
+   "excerpt": "lost everything everything everyone around me one person keeping alive left stopped talking me played people used me look mom mental abuses talks me always arguments us horrible relationship cannot anything help myself wish could kid feel pain dad left everything anymore stayed night hand full pills wondering live anymore cannot look good things life anymore numb pain point mom care feel help cousin close severely su"
+  },
+  {
+   "platform": "huggingface",
+   "chars": 632,
+   "title": "",
+   "excerpt": "我非常理解你的痛苦和困扰。年龄歧视是一个很普遍的问题,并且对于那些有着丰富经验和专业知识的人来说,这种歧视尤为令人沮丧。你已经证明了自己在之前的工作中的价值和能力,然而,现在面对失业和找工作的困难,确实会给你带来很大的压力和焦虑。 首先,我想告诉你,这并不是你个人的问题,而是一个社会的问题。许多公司可能更倾向于选择年轻的应聘者,但这并不能否定你的价值和能力。尽管我们无法改变别人的偏见,但我们可以尝试适应和应对这种情况。 我建议你继续努力寻找工作机会,同时也要保持乐观和自信。你可以考虑扩大你的求职范围,包括寻找适合你技能和经验的不同行业或职位。另外,你可以寻求一些职业培训或学习新的技能,以增加你的竞争力。这样做不仅可以提升你的自信心,还可以向潜在雇主展示你对于自我发展的积极态度。 同时,也不要忽视你的社交网络。与朋友、家人和前同事保持联系,告诉他们你正在寻找工作,他们可能能够提供一些有价值的信息和帮助。 最重要的是,请记住你的价值"
+  },
+  {
+   "platform": "huggingface",
+   "chars": 662,
+   "title": "",
+   "excerpt": "我完全理解你的困惑和痛苦。内向的性格特点可能会给我们带来一些挑战,特别是在社交场合中。但是,我希望你知道你并不孤单,很多人都面临着类似的困扰。 首先,我想告诉你,内向并不是一种缺点。每个人都有自己的独特性格和方式来与他人沟通。内向的人通常更喜欢独立思考和观察,这也是一种宝贵的特质。你不必完全改变自己,只需要找到适合自己的方式来与他人建立联系。 建立深入的关系需要时间和努力,不要着急。尝试去关注他人,倾听他们的故事和经历,这样可以让他们感到被重视和理解。同时,也要学会表达自己的观点和意见,不要害怕被别人批评或拒绝。记住,每个人都有自己的长处和不足,没有人是完美的。 在工作中,你可以尝试主动参与团队讨论,即使只是提出一些简短的想法或意见。不要害怕犯错误,因为只有通过实践和经验才能成长。同时,也要利用一些培训或工作坊来提升自己的沟通和社交技巧。 在个人生活中,你可以尝试参加一些兴趣小组或社交活动,与志同道合的人相遇和交流。不要害怕主动"
+  },
+  {
+   "platform": "huggingface",
+   "chars": 609,
+   "title": "",
+   "excerpt": "我完全理解你目前面临的困境和痛苦。感到无法准确表达自己的想法和感受是一种常见的困扰,特别是在工作和社交场合。这种困扰可能导致我们错失一些机会,也影响了我们的自信心和心理健康。 首先,我要告诉你,你并不是一个孤单的人。很多人都经历过类似的困扰,有时候我们会面对压力和不确定性。但是请相信,这不代表你没有能力克服这个问题,提升自己的沟通和表达能力。 要克服这个困境,需要时间和努力。一种方法是通过练习来提高自己的表达能力。可以从小事情开始,例如在与朋友或家人交流时主动表达自己的观点,或者在一些低风险的场合练习公开演讲。这样,你可以逐渐增强自己的自信心,并发现自己的表达能力正在逐渐提升。 此外,也可以尝试寻找一些沟通和表达技巧的培训课程。这些课程可以帮助你学习如何更好地组织和传达自己的想法,并提供一些实用的技巧和工具,让你在各种场合更加自信和流利地表达自己。 最后,不要忘记给自己一些宽容和理解。每个人都有自己的强项和不足之处,沟通和表达能"
+  },
+  {
+   "platform": "huggingface",
+   "chars": 793,
+   "title": "",
+   "excerpt": "我非常理解你目前的困境和苦恼。看到父母患上严重的疾病,需要长期的治疗和护理,对于你和你的家庭来说确实是一次巨大的打击。你的担忧和压力是可以理解的。 首先,经济负担可能是你最担心的问题之一。医疗费用和药物费用的不断增加,可能会给你的家庭带来很大的经济压力。我明白你担心目前的工作收入无法完全覆盖这些费用,而家庭的储蓄也在迅速减少。我建议你先了解一下社会福利和医疗补助等政府支持计划,看看是否有适用于你们的帮助措施。此外,你还可以与医院或诊所的社工或财务部门联系,咨询他们是否有任何财务援助计划可供申请。记住,你不需要独自承担所有的经济负担,寻求帮助是非常正常的。 其次,你提到父母的病情给你带来了心理和情绪上的压力。看到父母在病痛中挣扎,自然会让你感到心痛和无助。在这个时候,你需要给自己一些宽容和理解。焦虑和沮丧是正常的情绪反应,但也要记得照顾好自己的心理健康。找一些你感兴趣的活动或爱好来分散注意力,并寻求支持和倾诉的渠道,例如和亲朋好友"
+  },
+  {
+   "platform": "huggingface",
+   "chars": 708,
+   "title": "",
+   "excerpt": "我很理解你目前的困境,与室友之间的矛盾和冲突确实会让你感到非常苦恼和困惑。合租生活中的摩擦是很常见的问题,但并不意味着没有解决的办法。 首先,我想告诉你,你的感受是完全合理的。每个人都有自己的生活习惯和标准,而与他人相处时,协商和妥协是非常重要的。在沟通时,可以试着以理性和冷静的态度表达自己的需求和担忧。尝试与室友坐下来,用平等和尊重的方式交流,让他们了解你的想法和感受。同时,也要倾听他们的观点和意见,相互理解对方的立场。这样有助于建立良好的沟通基础,寻找共同解决问题的方法。 当谈到公共空间的使用和清洁度时,可以提出制定一份公共卫生计划或者轮流打扫的安排,以确保每个人都承担相应的责任。此外,可以尝试与室友商讨制定一些规则,如每天晚上一定时间要保持安静,以满足你的睡眠需求。关于家务分担,你可以和室友讨论分工的方式,确保公平合理。 然而,我也明白有时候沟通和协商并不总是有效的解决办法。如果你已经尝试过多次沟通而没有明显的改善,那么可"
+  },
+  {
+   "platform": "huggingface",
+   "chars": 578,
+   "title": "",
+   "excerpt": "我可以理解您所面临的困境和痛苦。看到父母逐渐变老,身体状况走下坡路,确实是一件令人担心和焦虑的事情。您的关心和照顾之情无疑是深深地体现了您对父母的爱和责任。 面对父母的身体和心理困扰,无疑会给您带来许多压力。尤其是经济方面的负担,这样的压力更是让您感到无力和困惑。我完全理解您的困境,因为医疗费用的不断增加确实给家庭经济带来了额外的压力。 同时,您也提到了工作和个人生活的压力,导致无法全天候陪伴和照顾父母。这种无法给予足够支持和帮助的感觉,无疑会让您感到无助和沮丧。我真诚地理解您的愿望,希望能够为父母提供更好的生活条件和关爱,但受到现实条件的限制。 面对这个普遍而真实的问题,我理解您想要找到更好的方式来应对和解决。在这里,我想强调的是,您已经在尽力扮演着一个贴心的孝子,并且愿意提供尽可能多的支持和关怀。这种情感上的陪伴和关心,对于父母来说是非常重要的。 除了经济支持和照顾,您也可以尝试与父母进行更多的沟通和交流,了解他们的需求和想"
+  },
+  {
+   "platform": "huggingface",
+   "chars": 553,
+   "title": "",
+   "excerpt": "我完全理解你现在的苦恼和担忧。作为一个父母,我们都希望看到我们的孩子取得好成绩,并且保持积极的学习态度。但是,有时候不如预期的结果会让我们感到困惑和无助。首先,我想告诉你,这并不意味着你在他的学习过程中出现了问题。每个人都会遇到挫折,而挫折并不代表失败。这是一个成长的机会,让孩子学会如何面对困难和挑战。重要的是,我们要给予他们足够的支持和鼓励,帮助他们重新找回学习的动力。 首先,和你的孩子坐下来好好谈谈,询问他的感受和想法。听取他的心声,让他知道你是支持他的。告诉他,考试成绩并不代表他的价值和智力,重要的是他所付出的努力和成长的过程。鼓励他从失败中学习,并帮助他设定一些可行的目标,以激发他重新找回学习的乐趣。 此外,为了帮助他恢复自信,你可以鼓励他参与一些他感兴趣的活动或领域。这将帮助他在其他方面取得成就感,并且为学习提供更积极的心态。同时,提醒他要保持积极的态度,并相信自己的能力。告诉他,你相信他能够克服这次的挫折,取得更好的"
+  }
+ ]
+}

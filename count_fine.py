@@ -26,6 +26,10 @@ for d in order:
             if 50 <= len(s) <= 220 and any(p in sl for p in phrases):
                 exemplars[k].append(s.strip()); break
 n = len(pool)
+try:
+    json.dump({"n": n, "counts": counts}, open(os.path.join(BASE, sys.argv[1].replace("_pool.jsonl", "_fine.json")), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+except Exception as e:
+    print("dump fail", e)
 print(f"POOL n={n}")
 for k in items:
     print(f"\n## {k}: {round(100*counts[k]/n,1)} （{counts[k]} 篇）")

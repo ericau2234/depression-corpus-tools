@@ -222,6 +222,62 @@
       svg#trend .axlab{fill:var(--ink-3);font-size:12.5px;font-weight:600}
       svg#trend .vlab{font-size:13px;font-weight:800}
       .ynote{font-size:13.5px;color:var(--ink-3);margin-top:10px;max-width:56em}
+      /* platform view */
+      .plat-head h2{font-size:23px;margin:0 0 4px}
+      .plat-head p{color:var(--ink-2);font-size:14.5px;margin:0;max-width:52em}
+      .plat-head p b{color:var(--ink)}
+      .pbtns{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+      .pbtns button{min-height:52px;border:1px solid var(--line);background:var(--panel);color:var(--ink);
+        font:inherit;font-size:15.5px;font-weight:800;padding:8px 14px;border-radius:12px;cursor:pointer;line-height:1.25;text-align:left}
+      .pbtns button span{display:block;font-size:12px;color:var(--ink-3);font-weight:600}
+      .pbtns button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+      .pbtns button[aria-pressed="true"] span{color:var(--accent-ink);opacity:.85}
+      .topbadge{display:inline-block;font-size:12.5px;font-weight:800;padding:2px 8px;border-radius:999px;
+        background:var(--accent);color:var(--accent-ink);margin-left:6px;vertical-align:2px}
+      .pnote{font-size:14px;color:var(--ink-2);margin-top:10px;max-width:56em}
+      .cmp-wrap{margin-top:18px}
+      .cmp-wrap h3{font-size:19px;margin:0 0 2px}
+      .cmp-wrap .tsub{font-size:14px;color:var(--ink-2);margin:0}
+      .cmp{margin-top:12px;background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:6px 16px}
+      .cmp-row{display:grid;grid-template-columns:118px repeat(var(--nplat,4),1fr);gap:6px;align-items:center;padding:9px 0;border-bottom:1px dashed var(--line)}
+      .cmp-row:last-child{border-bottom:0}
+      .cmp-row.head{font-size:12.5px;color:var(--ink-3);font-weight:700;border-bottom:1px solid var(--line)}
+      .cmp-row .cn{font-weight:700;font-size:14.5px}
+      .cmp-row .cv{font-size:15px;font-weight:600;color:var(--ink-2);text-align:right;font-variant-numeric:tabular-nums}
+      .cmp-row .cv.max{color:var(--accent);font-weight:800}
+      .cmp-row .cv.merged{color:var(--ink-3)}
+      .cmp-row.head .cv{text-align:right;color:var(--ink-3)}
+      @media (max-width:720px){
+        .cmp{padding:6px 12px}
+        .cmp-row{grid-template-columns:repeat(3,1fr);gap:4px 10px}
+        .cmp-row.head{display:none}
+        .cmp-row .cn{grid-column:1/-1;font-size:15px}
+        .cmp-row .cv{text-align:left;font-size:14px}
+        .cmp-row .cv::before{content:attr(data-pl);display:block;font-size:11.5px;color:var(--ink-3);font-weight:600}
+      }
+      /* detail progress + pending lists */
+      .detailprog{margin:16px 0 4px;background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:16px 18px 14px}
+      .detailprog h2{margin:0;font-size:20px;line-height:1.3}
+      .detailprog p{font-size:14.5px;color:var(--ink-2);margin:8px 0 0;max-width:56em}
+      .detailprog p b{color:var(--ink)}
+      .progbar{height:12px;border-radius:99px;background:var(--bar-track);overflow:hidden;margin-top:12px}
+      .progbar i{display:block;height:100%;background:var(--leaf-line);border-radius:99px}
+      .progmeta{font-size:13.5px;color:var(--ink-3);margin-top:6px}
+      .statuspill{display:inline-block;font-size:12.5px;font-weight:800;padding:3px 9px;border-radius:999px;color:#8a5a12;border:1px solid #d9b96a;background:#fdf3d7;vertical-align:2px;margin-left:8px;white-space:nowrap}
+      @media (prefers-color-scheme: dark){.statuspill{color:#e8c876;background:#3a2f16;border-color:#6b551f}}
+      .donepill{display:inline-block;font-size:12.5px;font-weight:800;padding:3px 9px;border-radius:999px;color:var(--leaf-ink);border:1px solid var(--leaf-line);background:var(--leaf-bg);vertical-align:2px;margin-left:8px;white-space:nowrap}
+      .pending-wrap{margin-top:16px}
+      .pending-wrap h3{font-size:19px;margin:0 0 2px}
+      .pending-wrap>p{font-size:14px;color:var(--ink-2);margin:0;max-width:52em}
+      .pending-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px;margin-top:12px}
+      .pending-group{border:1px solid var(--line);border-radius:12px;padding:12px 13px;background:var(--panel)}
+      .pending-group .pg-head{font-weight:800;font-size:15px;display:flex;align-items:center;gap:7px}
+      .pending-group .pg-head .cnt{margin-left:auto;font-size:13px;color:var(--ink-3);font-weight:700}
+      .pending-group ul{margin:8px 0 0;padding:0;list-style:none}
+      .pending-group li{font-size:14px;color:var(--ink-2);padding:6px 0;border-top:1px dashed var(--line);display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+      .pending-group li:first-child{border-top:0}
+      .pending-group li .st{font-size:12px;font-weight:700;color:#8a5a12;white-space:nowrap}
+      @media (prefers-color-scheme: dark){.pending-group li .st{color:#e8c876}}
       /* bottom CTA */
       .jumpbar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--panel);
         border-top:2px solid var(--line);box-shadow:0 -4px 18px rgba(60,45,20,.12);
@@ -256,6 +312,17 @@
         <div class="stats" id="stats"></div>
       </header>
 
+      <section class="detailprog" aria-label="第三层细项处理进度">
+        <h2>细项细分进度 <span class="donepill" id="progPill"></span></h2>
+        <p id="progDesc"></p>
+        <div class="progbar" role="img" id="progBar"><i></i></div>
+        <p class="progmeta" id="progMeta"></p>
+        <div class="rowbtns">
+          <button class="btn primary" id="progDoneBtn">睇已细分嘅具体项 ↓</button>
+          <button class="btn" id="progPendingBtn">睇未细分清单 ↓</button>
+        </div>
+      </section>
+
       <section class="highlight" aria-label="重点组合">
         <h2 id="hlTitle">⭐ 热销两大类：苹果类 ＋ 柑橘类</h2>
         <p class="mtotal" id="hlTotal"></p>
@@ -268,6 +335,7 @@
           <button id="viewListBtn" aria-pressed="true">列表</button>
           <button id="viewConcBtn" aria-pressed="false">具体原因</button>
           <button id="viewYearBtn" aria-pressed="false">按年份</button>
+          <button id="viewPlatBtn" aria-pressed="false">按来源</button>
           <button id="viewChartBtn" aria-pressed="false">圈图</button>
         </div>
         <div class="searchbox">
@@ -292,6 +360,14 @@
         </div>
         <div class="branch-jumps" id="branchJumps"></div>
         <div id="concGroups"></div>
+        <div class="pending-wrap" id="pendingWrap">
+          <h3 id="pendingTitle">暂时去到第二层嘅细项</h3>
+          <p id="pendingDesc"></p>
+          <div class="pending-grid" id="pendingGroups"></div>
+          <h3 style="margin-top:20px" id="keep2Title">试过细分、决定保留第二层</h3>
+          <p id="keep2Desc"></p>
+          <div class="pending-grid" id="keep2Groups"></div>
+        </div>
       </section>
 
       <section id="yearView" style="display:none" aria-label="按年份">
@@ -309,11 +385,26 @@
         <div class="ybtns" id="yearBtns" role="group" aria-label="拣年份"></div>
         <div class="ycard" id="yearCard"></div>
         <div class="trend-wrap">
-          <h3>走势：拣一个成因，睇佢逐年升跌</h3>
+          <h3>走势：拣一个分类，睇佢逐年升跌</h3>
           <p class="tsub">纵轴 = 每 100 篇已分类记录有几多篇（由 0 起）。横轴按真年份距离排，冇数据嗰年会断线，唔会驳埋扮连续。</p>
           <div class="tchips" id="trendChips"></div>
           <div class="card chart-card"><svg id="trend" viewBox="0 0 720 330" role="img" aria-label="逐年走势图"></svg></div>
           <p class="ynote" id="yearNote"></p>
+        </div>
+      </section>
+
+      <section id="platView" style="display:none" aria-label="按来源">
+        <div class="plat-head">
+          <h2>按来源睇：唔同来源唔同性格</h2>
+          <p>同一套分类、同一口径，套落每个来源分开再计。数字 = <b>嗰个来源每一百篇已分类记录入面，有几多篇提到呢个分类</b>（一篇可入多类）。每个来源掣下面同时写明<b>语料总数</b>同<b>已分类数</b>，两个数唔好撈乱；百分比全部由篇数即时计出，唔系另外填嘅。</p>
+        </div>
+        <div class="pbtns" id="platBtns" role="group" aria-label="拣来源"></div>
+        <div class="ycard" id="platCard"></div>
+        <div class="cmp-wrap">
+          <h3>跨来源对照：一眼睇晒边个来源边样最劲</h3>
+          <p class="tsub">每格 = 每 100 篇已分类记录有几多篇；每行最劲嗰格标红（「合并」列唔计）。合并列系各来源篇数加总之后再计过，唔系将百分比求平均。</p>
+          <div class="cmp" id="platCmp"></div>
+          <p class="ynote">点睇：来源性格可以差好远，先睇每个来源自己排头三位嗰几样，再同合并列对。样本细嘅来源比例波幅会大啲，唔好同大样本来源斤斤计较零点几。</p>
         </div>
       </section>
 
@@ -334,6 +425,7 @@
       <footer>
         <p><b>点读数：</b>第一层数字系该大类嘅记录数（一篇可以同时入几个大类，所以占比按 <span id="footHits">12,020</span> 次分类命中计，唔好当百分比加总）。第二层数字系「每一百篇该大类记录入面有几篇提到呢个细项」；第三层系「每一百篇嗰一支记录入面有几篇」。清单入面「其他／未细分」嗰行系冇明文提到更细项嘅部分，唔系漏计。</p>
         <p>组名有 <b>＊</b> 嗰啲系用较松口径计嘅，数字当<b>上限</b>睇；冇 ＊ 嗰啲系明文计。第三层暂时齐 <span id="footBranches">3</span> 支，其余各支去到第二层为止。（呢页系模板示例，数字同原句都系虚构示例；换自己数据时，记得连呢段口径说明一齐改。）</p>
+        <p>「按来源」视图嘅百分比全部由各来源篇数即时计出；「合并」列系先将各来源篇数加总、再计百分比，唔系将各来源嘅百分比求平均。</p>
       </footer>
     </div>
 
@@ -355,7 +447,9 @@
     /* META：docTotal = 已分类记录总数（篇）；docLabel = 嗰个总数嘅叫法；thinN = 年份样本低于呢个篇数就标「样本较薄」 */
     var META = { docTotal:11842, docLabel:"已分类评价", thinN:1000 };
     /* DATA 树：L1 用 count（篇数）；L2 rate = 每 100 篇该大类有几多篇，pool = 嗰支记录实数（有第三层先要）；
-       L3 rate = 每 100 篇嗰支（pool）有几多篇；star:true = 较松口径，名后加 ＊ 并提示当上限睇；color = 大类色（十六进制） */
+       L3 rate = 每 100 篇嗰支（pool）有几多篇；star:true = 较松口径，名后加 ＊ 并提示当上限睇；color = 大类色（十六进制）；
+       L2 keep2:true + note = 呢支试拆过第三层、决定保留第二层（原因写喺 note），页面会标明并喺具体原因页尾列出；
+       冇 children 又冇 keep2 嘅 L2 会自动入页尾「未细分」清单，唔使自己维护清单 */
     var DATA = { name:"全部", children:[
       {name:"苹果类", count:3280, color:"#c0392b", children:[
         {name:"富士苹果", rate:36.2, pool:1187, children:[
@@ -365,7 +459,7 @@
       {name:"柑橘类", count:2875, color:"#e67e22", children:[
         {name:"砂糖橘", rate:41.5, pool:1193, children:[
           {name:"酸过头", rate:15.9},{name:"籽太多", rate:12.7},{name:"皮难剥", rate:5.2}]},
-        {name:"橙子", rate:22.4},{name:"柚子", rate:11.9},{name:"柠檬", rate:4.6}]},
+        {name:"橙子", rate:22.4},{name:"柚子", rate:11.9, keep2:true, note:"试过再拆：评价多系成段散文咁写，冇稳定讲法，拆落去数字唔可靠，决定保留第二层。"},{name:"柠檬", rate:4.6}]},
       {name:"莓果类", count:2140, color:"#8e44ad", children:[
         {name:"草莓", rate:38.9, pool:832, children:[
           {name:"压坏／磕碰", rate:21.3},{name:"不甜", rate:11.5},{name:"个头参差", rate:6.4}]},
@@ -373,7 +467,7 @@
       {name:"热带水果", count:1965, color:"#b7950b", children:[
         {name:"芒果", rate:33.1},{name:"菠萝", rate:21.8},{name:"榴莲", rate:15.4}]},
       {name:"瓜类", count:1120, color:"#27ae60", children:[
-        {name:"西瓜", rate:45.3},{name:"哈密瓜", rate:18.9},{name:"木瓜", rate:7.5}]},
+        {name:"西瓜", rate:45.3},{name:"哈密瓜", rate:18.9, keep2:true, note:"试过再拆：提到佢嘅多系同西瓜比较嘅顺带一句，具体项样本太薄，保留第二层。"},{name:"木瓜", rate:7.5}]},
       {name:"礼赠类", count:640, star:true, color:"#7d7462", children:[
         {name:"礼盒装", rate:52.6},{name:"果篮", rate:24.8},{name:"节日定制", rate:9.7}]}
     ]};
@@ -499,9 +593,11 @@
 
     /* ============ 视图切换 ============ */
     var listView=document.getElementById("listView"), concView=document.getElementById("concView"),
-        chartWrap=document.getElementById("chartWrap"), yearView=document.getElementById("yearView");
+        chartWrap=document.getElementById("chartWrap"), yearView=document.getElementById("yearView"),
+        platView=document.getElementById("platView");
     var vList=document.getElementById("viewListBtn"), vConc=document.getElementById("viewConcBtn"),
-        vChart=document.getElementById("viewChartBtn"), vYear=document.getElementById("viewYearBtn");
+        vChart=document.getElementById("viewChartBtn"), vYear=document.getElementById("viewYearBtn"),
+        vPlat=document.getElementById("viewPlatBtn");
     var curView="list";
     function setView(v){
       curView=v;
@@ -509,14 +605,17 @@
       concView.style.display = v==="conc" ? "block" : "none";
       chartWrap.style.display = v==="chart" ? "block" : "none";
       yearView.style.display = v==="year" ? "block" : "none";
+      platView.style.display = v==="plat" ? "block" : "none";
       vList.setAttribute("aria-pressed", String(v==="list"));
       vConc.setAttribute("aria-pressed", String(v==="conc"));
       vChart.setAttribute("aria-pressed", String(v==="chart"));
       vYear.setAttribute("aria-pressed", String(v==="year"));
+      vPlat.setAttribute("aria-pressed", String(v==="plat"));
     }
     vList.addEventListener("click", function(){ setView("list"); });
     vConc.addEventListener("click", function(){ setView("conc"); concView.scrollIntoView({block:"start"}); });
     vYear.addEventListener("click", function(){ setView("year"); yearView.scrollIntoView({block:"start"}); });
+    vPlat.addEventListener("click", function(){ setView("plat"); platView.scrollIntoView({block:"start"}); });
     vChart.addEventListener("click", function(){ openChart(largestL1()); });
     document.getElementById("jumpBtn").addEventListener("click", function(){
       setView("conc"); concView.scrollIntoView({block:"start"});
@@ -589,10 +688,10 @@
           }
           html+='<div class="l2row" id="l2row-'+l2._uid+'">';
           html+='<div class="l2head"><span class="dot" style="background:'+l2.color+'"></span>'+
-            '<span class="nm">'+esc(l2.name)+'</span>'+
+            '<span class="nm">'+esc(l2.name)+'</span>'+(l2.children&&l2.children.length?'<span class="donepill">第三层已完成</span>':(l2.keep2?'<span class="donepill">已试拆 · 保留第二层</span>':'<span class="statuspill">第三层未细分</span>'))+
             '<span class="vl">约 '+fmt(l2.value)+'</span><span class="pc">篇 · '+pctTxt(pct(l2.value,l1.value))+'</span></div>';
           html+='<div class="bar"><i style="width:'+Math.max(1.5,pct(l2.value,l1.value))+'%;background:'+l2.color+'"></i></div>';
-          html+='<div class="rate">每 100 篇「'+esc(l1.name)+'」记录有 '+l2.rate+' 篇提到呢项</div>';
+          html+='<div class="rate">每 100 篇「'+esc(l1.name)+'」记录有 '+l2.rate+' 篇提到呢项'+(l2.children&&l2.children.length?'':(l2.keep2?' · 已试拆过，决定保留第二层':' · 第三层未细分'))+'</div>';
           if(l2.children && l2.children.length){
             html+='<div class="l2btns">'+
               '<button class="btn small primary" data-jumpbranch="'+l2._uid+'">直接睇具体原因 ↓</button>'+
@@ -845,7 +944,7 @@
         html+='</ul>';
         if(n!==DATA) html+='<p class="foot-note">比例系相对呢一层嘅占比；各细项可以重叠（同一篇记录可命中多项），所以加埋唔一定等于 100%。</p>';
       } else if(n!==DATA && n.depth!==3){
-        html+='<p class="foot-note">呢项去到第二层为止，暂未再细分。</p>';
+        html+='<p class="foot-note">'+(n.keep2? '呢项已经试拆过第三层，决定保留喺第二层，唔系未做。'+(n.note? ' '+esc(n.note):'') : '呢项第三层未细分，暂时去到第二层为止。')+'</p>';
       }
       html+='<button class="btn small backchart" id="backChartBtn">↑ 返去幅图</button>';
       panel.innerHTML=html;
@@ -900,6 +999,28 @@
 /* ===== YEAR DATA: replace this block =====
     var YEAR_DATA={"posts":{"totN":11842,"tot":{"苹果类":27.5,"柑橘类":24.8,"莓果类":18.5,"热带水果":16.1,"瓜类":9.0,"礼赠类":5.6},"totHl":[13.6,19.6,40.7],"years":{"2022":{"n":2410,"long":3120,"p":{"苹果类":28.4,"柑橘类":24.1,"莓果类":17.2,"热带水果":15.8,"瓜类":9.3,"礼赠类":4.9},"c":{"苹果类":684,"柑橘类":581,"莓果类":415,"热带水果":381,"瓜类":224,"礼赠类":118},"hl":[12.4,17.8,38.5],"hlC":[299,429,928]},"2023":{"n":2985,"long":3860,"p":{"苹果类":27.9,"柑橘类":24.6,"莓果类":18.1,"热带水果":16.2,"瓜类":9.0,"礼赠类":5.3},"c":{"苹果类":833,"柑橘类":734,"莓果类":540,"热带水果":484,"瓜类":269,"礼赠类":158},"hl":[13.1,18.9,39.8],"hlC":[391,564,1188]},"2024":{"n":3312,"long":4205,"p":{"苹果类":27.2,"柑橘类":25.0,"莓果类":18.8,"热带水果":15.9,"瓜类":8.7,"礼赠类":5.8},"c":{"苹果类":901,"柑橘类":828,"莓果类":623,"热带水果":527,"瓜类":288,"礼赠类":192},"hl":[14.0,20.1,41.2],"hlC":[464,666,1365]},"2025":{"n":3135,"long":3980,"p":{"苹果类":26.8,"柑橘类":25.3,"莓果类":19.4,"热带水果":16.5,"瓜类":8.9,"礼赠类":6.1},"c":{"苹果类":840,"柑橘类":793,"莓果类":608,"热带水果":517,"瓜类":279,"礼赠类":191},"hl":[14.6,21.0,42.7],"hlC":[458,658,1339]}},"note":"示例数据嚟，换自己数据时连呢句都改埋。"},"comments":{"totN":1639,"tot":{"苹果类":25.4,"柑橘类":24.2,"莓果类":16.8,"热带水果":14.7,"瓜类":8.5,"礼赠类":4.4},"totHl":[16.0,22.3,45.3],"years":{"2022":{"n":486,"long":1930,"p":{"苹果类":26.1,"柑橘类":23.8,"莓果类":15.9,"热带水果":14.2,"瓜类":8.8,"礼赠类":3.9},"c":{"苹果类":127,"柑橘类":116,"莓果类":77,"热带水果":69,"瓜类":43,"礼赠类":19},"hl":[15.2,21.4,44.0],"hlC":[74,104,214]},"2023":{"n":552,"long":2210,"p":{"苹果类":25.4,"柑橘类":24.1,"莓果类":16.8,"热带水果":14.6,"瓜类":8.5,"礼赠类":4.4},"c":{"苹果类":140,"柑橘类":133,"莓果类":93,"热带水果":81,"瓜类":47,"礼赠类":24},"hl":[16.0,22.3,45.2],"hlC":[88,123,250]},"2025":{"n":601,"long":2385,"p":{"苹果类":24.9,"柑橘类":24.4,"莓果类":17.5,"热带水果":15.1,"瓜类":8.2,"礼赠类":4.8},"c":{"苹果类":150,"柑橘类":147,"莓果类":105,"热带水果":91,"瓜类":49,"礼赠类":29},"hl":[16.8,23.1,46.5],"hlC":[101,139,279]}},"note":"追评 2024 年冇数据——走势图嗰度会断开，唔系跌到零。追评好多冇写明分类，比例整体细啲，唔好同评价嗰层直接比大小。"}};
     /* ===== END YEAR DATA ===== */
+/* ===== PLATFORM DATA: replace this block =====
+   PLATFORMS：每个来源一条。n = 已分类记录数；total = 语料总数；long = 长记录数（已分类率页面用 n ÷ long 即时计）。
+   c = { 大类名: 篇数 }；hlC = 特别系列（HL.series）三口径嘅篇数，顺序同 HL.series 对应。
+   百分比（每 100 篇）全部由 c ÷ n、hlC ÷ n 即时计，唔使自己填；大类名要同 YCATS / DATA 第一层一致。
+   tag = 来源掣小字（可选）；draft:true = 数据未齐，页面会标「初稿」（可选）；note = 来源卡底部一句说明（可选）。
+   「合并（全部来源）」列唔使填：页面会将各来源篇数加总再计。示例入面各来源 n 加总 = META.docTotal（11,842），
+   c 加总推返出嚟嘅每百篇比例，对得返 YEAR DATA 全期（tot）嗰套数（27.5 / 24.8 / 18.5 / 16.1 / 9.0 / 5.6），hlC 加总亦对得返 totHl。 */
+    var PLATFORMS=[
+      {id:"web", name:"网店", tag:"自营网店", n:5200, total:9100, long:7600,
+        c:{"苹果类":1420,"柑橘类":1260,"莓果类":880,"热带水果":840,"瓜类":360,"礼赠类":530},
+        hlC:[780,1140,2260],
+        note:"自营网店嘅评价：送礼场景多，礼赠类 10.2 系三个来源入面最高。"},
+      {id:"store", name:"门市", tag:"实体门市", n:3850, total:6400, long:5300,
+        c:{"苹果类":1010,"柑橘类":930,"莓果类":850,"热带水果":480,"瓜类":520,"礼赠类":110},
+        hlC:[470,655,1470],
+        note:"实体门市嘅评价：即场试食多，莓果类同瓜类明显高过其他来源。"},
+      {id:"delivery", name:"外卖平台", tag:"第三方外卖", draft:true, n:2792, total:5010, long:4150,
+        c:{"苹果类":826,"柑橘类":747,"莓果类":461,"热带水果":587,"瓜类":186,"礼赠类":23},
+        hlC:[361,526,1090],
+        note:"第三方外卖平台嘅评价，新来源，数据仲入紧，系初稿：热带水果 21.0 居首（配送多系切好嘅果切），礼赠类几乎冇。"}
+    ];
+    /* ===== END PLATFORM DATA ===== */
     /* ============ 按年份视图 ============ */
     /* YCATS：年份视图用嘅大类名（顺序 = 显示顺序），要同 YEAR_DATA 入面 p/c/tot 嘅键一致 */
     var YCATS=["苹果类","柑橘类","莓果类","热带水果","瓜类","礼赠类"];
@@ -1012,9 +1133,140 @@
     document.getElementById("ylComments").addEventListener("click", function(){ setYLayer("comments"); });
     buildYearBtns(); buildTrendChips(); renderYearCard(); renderTrend();
 
+    /* ============ 按来源视图（百分比全部由 PLATFORMS 篇数即时计出） ============ */
+    /* PLAT_ORDER：对照表嘅大类顺序，沿用 YCATS */
+    var PLAT_ORDER=YCATS.slice();
+    var MERGED_NAME="合并（全部来源）";
+    function platShare(p, name){ return p.n>0? Math.round((p.c[name]||0)/p.n*1000)/10 : 0; }
+    function platHlShare(p, i){ return p.n>0? Math.round(((p.hlC||[])[i]||0)/p.n*1000)/10 : 0; }
+    function mergedPlat(){
+      var c={}, hlC=[0,0,0], n=0, total=0, long=0;
+      PLATFORMS.forEach(function(p){
+        n+=p.n; total+=p.total||0; long+=p.long||0;
+        PLAT_ORDER.forEach(function(k){ c[k]=(c[k]||0)+(p.c[k]||0); });
+        (p.hlC||[]).forEach(function(v,i){ hlC[i]+=v; });
+      });
+      return {id:"__merged", name:MERGED_NAME, merged:true, n:n, total:total, long:long, c:c, hlC:hlC};
+    }
+    var platSel=PLATFORMS.length?PLATFORMS[0].id:"";
+    function platById(id){ var f=PLATFORMS.filter(function(p){return p.id===id;}); return f.length?f[0]:PLATFORMS[0]; }
+    function buildPlatBtns(){
+      var box=document.getElementById("platBtns"); box.innerHTML="";
+      PLATFORMS.forEach(function(p){
+        var b=document.createElement("button");
+        b.setAttribute("aria-pressed", String(p.id===platSel));
+        b.innerHTML=esc(p.name)+(p.draft?"（初稿）":"")+"<span>已分类 "+fmt(p.n)+" 篇"+(p.total?" · 语料共 "+fmt(p.total)+" 条":"")+(p.tag?" · "+esc(p.tag):"")+"</span>";
+        b.addEventListener("click", function(){ platSel=p.id; buildPlatBtns(); renderPlatCard(); });
+        box.appendChild(b);
+      });
+    }
+    function renderPlatCard(){
+      var p=platById(platSel), card=document.getElementById("platCard");
+      var cpct = p.long? Math.round(p.n/p.long*1000)/10 : null;
+      var html="<h3>"+esc(p.name)+(p.draft?'<span class="thinbadge">初稿 · 数据未齐 · 样本细</span>':"")+"</h3>";
+      html+='<div class="ysub">已分类记录 <b>'+fmt(p.n)+'</b> 篇'+(p.long? '（长记录 '+fmt(p.long)+' 篇入面命中分类，占 '+cpct+'%）· 语料共 '+fmt(p.total)+' 条' : '')+' · 下面数字 = 每 100 篇嗰个来源已分类记录有几多篇（一篇可入多类）</div>';
+      html+='<div class="yhighlight"><div class="ymt">'+esc(HL.cardTitle)+'</div><div class="ymrow">'+
+        HL.series.map(function(s,i){ return "<span>"+esc(s)+" <b>"+platHlShare(p,i)+"</b>（"+fmt((p.hlC||[])[i]||0)+" 篇）</span>"; }).join("")+"</div>"+
+        '<div class="ymnote">'+esc(HL.note)+'</div></div>';
+      var rows=PLAT_ORDER.map(function(k){ return {name:k, v:platShare(p,k), cnt:p.c[k]||0}; })
+        .sort(function(a,b){ return b.v-a.v; });
+      var maxV=0; rows.forEach(function(r){ if(r.v>maxV) maxV=r.v; });
+      rows.forEach(function(r, idx){
+        html+='<div class="yrow"><div class="l2head"><span class="dot" style="background:'+yColor(r.name)+'"></span>'+
+          '<span class="nm">'+esc(r.name)+'</span>'+(idx<3?'<span class="topbadge">呢个来源最突出</span>':"")+
+          '<span class="vl">'+r.v+'</span><span class="pc">/ 每百篇 · '+fmt(r.cnt)+' 篇</span></div>'+
+          '<div class="bar"><i style="width:'+(maxV>0? Math.max(1.5, r.v/maxV*100):0)+'%;background:'+yColor(r.name)+'"></i></div></div>';
+      });
+      if(p.note) html+='<p class="pnote">'+esc(p.note)+'</p>';
+      card.innerHTML=html;
+    }
+    function buildPlatCmp(){
+      var box=document.getElementById("platCmp");
+      var all=PLATFORMS.concat([mergedPlat()]);
+      box.style.setProperty("--nplat", all.length);
+      var html='<div class="cmp-row head"><span class="cn">分类</span>'+all.map(function(p){
+        return '<span class="cv">'+esc(p.name)+(p.draft?" 初稿":"")+'</span>'; }).join("")+'</div>';
+      function cmpRow(label, get){
+        var vals=all.map(get);
+        var max=-1; for(var i=0;i<all.length;i++){ if(!all[i].merged && vals[i]!=null && vals[i]>max) max=vals[i]; }
+        var h='<div class="cmp-row"><span class="cn">'+esc(label)+'</span>';
+        all.forEach(function(p,i){
+          var cls="cv"+(p.merged?" merged":(vals[i]===max?" max":""));
+          h+='<span class="'+cls+'" data-pl="'+esc(p.name)+'">'+vals[i]+'</span>';
+        });
+        return h+'</div>';
+      }
+      PLAT_ORDER.forEach(function(k){ html+=cmpRow(k, function(p){ return platShare(p,k); }); });
+      HL.series.forEach(function(s,i){ html+=cmpRow(s, function(p){ return platHlShare(p,i); }); });
+      box.innerHTML=html;
+    }
+    buildPlatBtns(); renderPlatCard(); buildPlatCmp();
+
+    /* ============ 未细分清单 + 保留第二层清单：逐大类列晒（由 DATA 自动生成） ============ */
+    function keep2Count(){ var n=0; DATA.children.forEach(function(l1){ (l1.children||[]).forEach(function(l2){ if(l2.keep2) n++; }); }); return n; }
+    function buildPending(){
+      var box=document.getElementById("pendingGroups");
+      if(box){
+        var html="", nPend=0;
+        DATA.children.forEach(function(l1){
+          var pending=(l1.children||[]).filter(function(l2){ return !l2.rest && !l2.keep2 && !(l2.children&&l2.children.length); });
+          if(!pending.length) return;
+          nPend+=pending.length;
+          html+='<div class="pending-group"><div class="pg-head"><span class="dot" style="background:'+l1.color+'"></span>'+esc(l1.name)+'<span class="cnt">'+pending.length+' 支未细分</span></div><ul>';
+          pending.slice().sort(function(a,b){return b.value-a.value;}).forEach(function(l2){
+            html+='<li><span>'+esc(l2.name)+'</span><span class="st">未细分</span></li>';
+          });
+          html+='</ul></div>';
+        });
+        box.innerHTML=html;
+        document.getElementById("pendingTitle").textContent="暂时去到第二层嘅细项（"+nPend+" 支）";
+        document.getElementById("pendingDesc").textContent="以下 "+nPend+" 支暂时去到第二层为止，第三层未细分，唔系漏咗。其余细项："+branches.length+" 支有第三层细分（喺上面），"+keep2Count()+" 支试拆后保留第二层（喺下面嗰格）。";
+      }
+      var kbox=document.getElementById("keep2Groups");
+      if(kbox){
+        var khtml="", nKeep=0;
+        DATA.children.forEach(function(l1){
+          var kept=(l1.children||[]).filter(function(l2){ return l2.keep2; });
+          if(!kept.length) return;
+          nKeep+=kept.length;
+          khtml+='<div class="pending-group"><div class="pg-head"><span class="dot" style="background:'+l1.color+'"></span>'+esc(l1.name)+'<span class="cnt">'+kept.length+' 支保留第二层</span></div><ul>';
+          kept.forEach(function(l2){
+            khtml+='<li style="display:block"><span>'+esc(l2.name)+'</span>'+(l2.note? '<div style="font-size:13px;color:var(--ink-3);margin-top:2px">'+esc(l2.note)+'</div>' : '')+'</li>';
+          });
+          khtml+='</ul></div>';
+        });
+        kbox.innerHTML=khtml;
+        document.getElementById("keep2Title").textContent="试过细分、决定保留第二层（"+nKeep+" 支）";
+        document.getElementById("keep2Desc").textContent="呢 "+nKeep+" 支试拆过晒，唔系未做：逐支原因写喺下面，列表入面嗰支隔篱都有标。";
+      }
+    }
+
+    /* ============ 顶部细分进度块（数字全部由 DATA 计出） ============ */
+    function buildProg(){
+      var total=0, pending=0;
+      DATA.children.forEach(function(l1){ (l1.children||[]).forEach(function(l2){
+        if(l2.rest) return; total++;
+        if(!l2.keep2 && !(l2.children&&l2.children.length)) pending++;
+      }); });
+      var kept=keep2Count(), done=branches.length+kept;
+      var pctDone= total>0? Math.round(done/total*1000)/10 : 0;
+      document.getElementById("progPill").textContent=done+" 支已处理";
+      document.getElementById("progDesc").innerHTML="第二层细项共 <b>"+total+"</b> 支：<b>"+branches.length+"</b> 支已经拆到第三层（共 "+nL3+" 个具体项），<b>"+kept+"</b> 支试拆后决定保留第二层，仲有 <b>"+pending+"</b> 支未细分——完整清单喺「具体原因」页尾，唔系漏咗。";
+      var bar=document.getElementById("progBar");
+      bar.setAttribute("aria-label","第三层处理进度 "+done+" / "+total+" 支");
+      bar.querySelector("i").style.width=pctDone+"%";
+      document.getElementById("progMeta").textContent="进度："+done+" / "+total+" 支细项已处理（"+pctDone+"%） · "+branches.length+" 支有第三层细分 · "+kept+" 支保留第二层 · "+pending+" 支未细分";
+    }
+    var progDoneBtn=document.getElementById("progDoneBtn");
+    if(progDoneBtn) progDoneBtn.addEventListener("click", function(){ setView("conc"); concView.scrollIntoView({block:"start"}); });
+    var progPendingBtn=document.getElementById("progPendingBtn");
+    if(progPendingBtn) progPendingBtn.addEventListener("click", function(){ setView("conc"); setTimeout(function(){ flashEl(document.getElementById("pendingWrap")); },60); });
+
     /* ============ 初始化 ============ */
     buildList();
     buildConcrete();
+    buildPending();
+    buildProg();
     setView("list");
     render();
     showPanel(DATA,false);
